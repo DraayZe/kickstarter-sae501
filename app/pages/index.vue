@@ -22,10 +22,28 @@ const images = [
 const defaultValue = "item-1"
 
 const accordionItems = [
-  { value: "item-1", title: "Description du jeu", content: "Yes. It adheres to the WAI-ARIA design pattern." },
-  { value: "item-2", title: "Présentation de l'équipe", content: "Yes. It's unstyled by default, giving you freedom over the look and feel." },
+  { value: "item-1", title: "Description du jeu", content: "Last Drive est un jeu de type endless runner. Une moto roule dans un monde post-apocalyptique et essaye de s'enfuir de la ville abandonnée en esquivant les obtacles de nuit. Le joueur doit récupérer de l'électricité afin de garder ses phares allumé" },
+  { value: "item-2", title: "Présentation de l'équipe" },
   { value: "item-3", title: "Planning", content: "Yes! You can use the transition prop to configure the animation." },
   { value: "item-4", title: "Dernière actualités", content: "Yes! You can use the transition prop to configure the animation." },
+]
+
+const teamMembers = [
+  {
+    name: "Lenny Fernet",
+    role: "Développeur web et jeux",
+    photo: "/images/team/lenny.jpg"
+  },
+  {
+    name: "Ewen D'avanzo",
+    role: "Game designer",
+    photo: "/images/team/ewen.jpg"
+  },
+  {
+    name: "Loann Germe",
+    role: "Game designer",
+    photo: "/images/team/loann.jpg"
+  }
 ]
 
 const progress = ref(10)
@@ -42,7 +60,6 @@ watchEffect((cleanupFn) => {
 
 <template>
   <div class="min-h-screen">
-    <!-- Header -->
     <div class="container mx-auto px-6 py-4 border-b border-[#DDDDDD]/40">
       <h1 class="text-4xl font-display text-white text-center">Last Drive</h1>
       <p class="mt-4 text-lg text-[#DDDDDD] text-center">
@@ -50,11 +67,8 @@ watchEffect((cleanupFn) => {
       </p>
     </div>
 
-    <!-- Contenu principal -->
     <div class="flex gap-8 mx-44 py-12">
-      <!-- Colonne gauche : Carrousel + Accordéon -->
       <div class="flex-1">
-        <!-- Carrousel -->
         <div class="mb-12">
           <Carousel class="relative w-full">
             <CarouselContent>
@@ -77,17 +91,28 @@ watchEffect((cleanupFn) => {
         <Accordion type="multiple" class="w-full" collapsible :default-value="defaultValue">
           <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
             <AccordionTrigger class="text-white font-display">{{ item.title }}</AccordionTrigger>
-            <AccordionContent class="text-white">
-              {{ item.content }}
+            <AccordionContent class="text-gray-200">
+              <!-- Affichage spécial pour l'équipe -->
+              <div v-if="item.value === 'item-2'" class="grid grid-cols-3 gap-6">
+                <div v-for="member in teamMembers" :key="member.name" class="flex flex-col items-center text-center">
+                  <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-[#C2B042]">
+                    <img :src="member.photo" :alt="member.name" class="w-full h-full object-cover" />
+                  </div>
+                  <h4 class="text-white font-semibold text-lg mb-1">{{ member.name }}</h4>
+                  <p class="text-[#C2B042] text-sm">{{ member.role }}</p>
+                </div>
+              </div>
+              <!-- Affichage normal pour les autres items -->
+              <div v-else>
+                {{ item.content }}
+              </div>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
       </div>
 
-      <!-- Colonne droite : Progress (sticky) -->
       <div class="w-1/4">
         <div class="sticky top-8 space-y-6">
-          <!-- Timeline du projet -->
           <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
             <div class="flex justify-between items-center mb-3">
               <h3 class="text-white font-semibold text-lg">Timeline du projet</h3>
@@ -97,7 +122,6 @@ watchEffect((cleanupFn) => {
             <p class="text-[#999999] text-sm">Le projet se termine le 23 janvier 2026</p>
           </div>
 
-          <!-- Avancée du projet -->
           <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
             <div class="flex justify-between items-center mb-3">
               <h3 class="text-white font-semibold text-lg">Avancée du projet</h3>
