@@ -9,23 +9,24 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ref, watchEffect } from "vue"
 import { Progress } from "@/components/ui/progress"
+import { Check, Circle, Dot } from "lucide-vue-next"
+import { Button } from "@/components/ui/button"
+import { Stepper, StepperDescription, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/ui/stepper"
 
 const images = [
-  { src: '/images/image1.png', alt: 'Description image 1' },
-  { src: '/images/image2.png', alt: 'Description image 2' },
-  { src: '/images/image3.png', alt: 'Description image 3' },
-  { src: '/images/image4.png', alt: 'Description image 4' },
   { src: '/images/image5.png', alt: 'Description image 5' },
+  { src: '/images/image2.png', alt: 'Description image 2' },
+  { src: '/images/image4.png', alt: 'Description image 4' },
   { src: '/images/image6.png', alt: 'Description image 6' }
 ]
 
 const defaultValue = "item-1"
 
 const accordionItems = [
-  { value: "item-1", title: "Description du jeu", content: "Last Drive est un jeu de type endless runner. Une moto roule dans un monde post-apocalyptique et essaye de s'enfuir de la ville abandonnée en esquivant les obtacles de nuit. Le joueur doit récupérer de l'électricité afin de garder ses phares allumé" },
+  { value: "item-1", title: "Description du jeu", content: "Last Drive vous plonge dans une course effrénée à moto au cœur d'une métropole post-apocalyptique. Fuyez cette ville fantôme de nuit en esquivant les dangers et en récupérant de l'électricité vitale : sans phares, l'obscurité vous engloutira." },
   { value: "item-2", title: "Présentation de l'équipe" },
   { value: "item-3", title: "Planning", content: "Yes! You can use the transition prop to configure the animation." },
-  { value: "item-4", title: "Dernière actualités", content: "Yes! You can use the transition prop to configure the animation." },
+  { value: "item-4", title: "Dernière actualités", content: "En cours..." },
 ]
 
 const teamMembers = [
@@ -56,18 +57,56 @@ watchEffect((cleanupFn) => {
   }, 500)
   cleanupFn(() => clearTimeout(timer))
 })
+
+const steps = [
+  {
+    step: 1,
+    title: "Conception (type de jeu, storystelling, moodboard)",
+    description:
+        "Octobre",
+  },
+  {
+    step: 2,
+    title: "Prototypage (fonctionalités de base)",
+    description: "Novembre",
+  },
+  {
+    step: 3,
+    title: "Développement (gestion des parties, intégration)",
+    description:
+        "Novembre - Décembre",
+  },
+  {
+    step: 4,
+    title: "Tests et ajustements (identification et correction des bugs)",
+    description:
+        "///",
+  },
+  {
+    step: 5,
+    title: "Intégration complète (adaption du jeu à la borne)",
+    description:
+        "///",
+  },
+  {
+    step: 6,
+    title: "Validation et déploiement (derniers ajustements)",
+    description:
+        "///",
+  },
+]
 </script>
 
 <template>
   <div class="min-h-screen">
-    <div class="container mx-auto px-6 py-4 border-b border-[#DDDDDD]/40">
+    <div class="container mx-auto px-6 py-4 border-b border-[#DDDDDD]/40 flex flex-col items-center">
       <h1 class="text-4xl font-display text-white text-center">Last Drive</h1>
       <p class="mt-4 text-lg text-[#DDDDDD] text-center">
         Découvrez les dernières actualités de Last Drive, la roadmap, l'avancement du projet et rencontrez notre équipe passionnée.
       </p>
     </div>
 
-    <div class="flex gap-8 mx-44 py-12">
+    <div class="flex gap-8 mx-74 py-12">
       <div class="flex-1">
         <div class="mb-12">
           <Carousel class="relative w-full">
@@ -75,7 +114,7 @@ watchEffect((cleanupFn) => {
               <CarouselItem v-for="(image, index) in images" :key="index">
                 <div class="p-1">
                   <Card>
-                    <CardContent class="flex items-center justify-center p-0 overflow-hidden rounded-lg aspect-video">
+                    <CardContent class="flex items-center justify-center p-0 overflow-hidden rounded-lg aspect-video ">
                       <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover" />
                     </CardContent>
                   </Card>
@@ -87,22 +126,66 @@ watchEffect((cleanupFn) => {
           </Carousel>
         </div>
 
-        <!-- Accordéon -->
         <Accordion type="multiple" class="w-full" collapsible :default-value="defaultValue">
           <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
-            <AccordionTrigger class="text-white font-display">{{ item.title }}</AccordionTrigger>
+            <AccordionTrigger class="text-white text-xl font-display2">{{ item.title }}</AccordionTrigger>
             <AccordionContent class="text-gray-200">
-              <!-- Affichage spécial pour l'équipe -->
               <div v-if="item.value === 'item-2'" class="grid grid-cols-3 gap-6">
                 <div v-for="member in teamMembers" :key="member.name" class="flex flex-col items-center text-center">
-                  <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-[#C2B042]">
+                  <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
                     <img :src="member.photo" :alt="member.name" class="w-full h-full object-cover" />
                   </div>
                   <h4 class="text-white font-semibold text-lg mb-1">{{ member.name }}</h4>
                   <p class="text-[#C2B042] text-sm">{{ member.role }}</p>
                 </div>
               </div>
-              <!-- Affichage normal pour les autres items -->
+              <div v-else-if="item.value === 'item-3'">
+                <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10 p-10" :default-value="2">
+                  <StepperItem
+                      v-for="step in steps"
+                      :key="step.step"
+                      v-slot="{ state }"
+                      class="relative flex w-full items-start gap-6"
+                      :step="step.step"
+                  >
+                    <StepperSeparator
+                        v-if="step.step !== steps[steps.length - 1].step"
+                        class="absolute left-[18px] top-[38px] block h-[105%] w-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-[#C2B042]"
+                    />
+
+                    <StepperTrigger as-child>
+                      <Button
+                          :variant="state === 'inactive' ? 'outline' : 'default'"
+                          size="icon"
+                          class="z-10 rounded-full shrink-0 border-white/20"
+                          :class="[
+                            state === 'active' && 'bg-[#C2B042] hover:bg-[#C2B042]/90 text-white',
+                            state === 'completed' && 'bg-[#C2B042] hover:bg-[#C2B042]/90 text-white',
+                            state === 'inactive' && 'bg-transparent border-white/40 text-white hover:bg-transparent'
+                          ]"
+                      >
+                        <Check v-if="state === 'completed'" class="size-5" />
+                        <Circle v-if="state === 'active'" />
+                        <Dot v-if="state === 'inactive'" />
+                      </Button>
+                    </StepperTrigger>
+
+                    <div class="flex flex-col gap-1">
+                      <StepperTitle
+                          :class="[state === 'active' && 'text-[#C2B042]']"
+                          class="text-sm font-semibold transition lg:text-base text-white"
+                      >
+                        {{ step.title }}
+                      </StepperTitle>
+                      <StepperDescription
+                          class="text-xs text-gray-400 transition lg:text-sm"
+                      >
+                        {{ step.description }}
+                      </StepperDescription>
+                    </div>
+                  </StepperItem>
+                </Stepper>
+              </div>
               <div v-else>
                 {{ item.content }}
               </div>

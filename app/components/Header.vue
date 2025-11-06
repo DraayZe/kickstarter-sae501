@@ -12,30 +12,30 @@ const route = useRoute();
 
         <div class="hidden md:flex items-center space-x-8">
           <NuxtLink
-            to="/actualite"
-            class="font-display2 text-[#DDDDDD]"
-            :class="{ 'text-blue-600': route.path === '/actualite' }"
+              to="/actualite"
+              class="font-display2"
+              :class="route.path === '/actualite' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
           >
             Actualités
           </NuxtLink>
           <NuxtLink
-            to="/roadmap"
-            class="font-display2 text-[#DDDDDD]"
-            :class="{ 'text-blue-600': route.path === '/roadmap' }"
+              to="/roadmap"
+              class="font-display2"
+              :class="route.path === '/roadmap' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
           >
             Roadmap
           </NuxtLink>
           <NuxtLink
-            to="/avancement"
-            class="font-display2 text-[#DDDDDD]"
-            :class="{ 'text-blue-600': route.path === '/avancement' }"
+              to="/avancement"
+              class="font-display2"
+              :class="route.path === '/avancement' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
           >
             Avancement
           </NuxtLink>
           <NuxtLink
-            to="/equipe"
-            class="font-display2 text-[#DDDDDD]"
-            :class="{ 'text-blue-600': route.path === '/equipe' }"
+              to="/equipe"
+              class="font-display2"
+              :class="route.path === '/equipe' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
           >
             Équipe
           </NuxtLink>
