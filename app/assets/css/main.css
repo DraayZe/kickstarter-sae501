@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+    --font-display: "TrenchSlab", sans-serif;
+}
+
+@font-face {
+    font-family: 'TrenchSlab';
+    src: url('/fonts/TrenchSlab-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
