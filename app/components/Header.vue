@@ -3,38 +3,38 @@ const route = useRoute();
 </script>
 
 <template>
-  <header class="bg-[#222222]">
+  <header>
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
-        <NuxtLink to="/" class="text-4xl font-display text-[#DDDDDD]">
+        <NuxtLink to="/" class="text-4xl font-display2 text-[#DDDDDD]">
           Pixen
         </NuxtLink>
 
         <div class="hidden md:flex items-center space-x-8">
           <NuxtLink
             to="/actualite"
-            class="font-display text-[#DDDDDD]"
+            class="font-display2 text-[#DDDDDD]"
             :class="{ 'text-blue-600': route.path === '/actualite' }"
           >
             Actualités
           </NuxtLink>
           <NuxtLink
             to="/roadmap"
-            class="font-display text-[#DDDDDD]"
+            class="font-display2 text-[#DDDDDD]"
             :class="{ 'text-blue-600': route.path === '/roadmap' }"
           >
             Roadmap
           </NuxtLink>
           <NuxtLink
             to="/avancement"
-            class="font-display text-[#DDDDDD]"
+            class="font-display2 text-[#DDDDDD]"
             :class="{ 'text-blue-600': route.path === '/avancement' }"
           >
             Avancement
           </NuxtLink>
           <NuxtLink
             to="/equipe"
-            class="font-display text-[#DDDDDD]"
+            class="font-display2 text-[#DDDDDD]"
             :class="{ 'text-blue-600': route.path === '/equipe' }"
           >
             Équipe
