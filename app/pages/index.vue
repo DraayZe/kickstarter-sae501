@@ -44,7 +44,7 @@ watchEffect((cleanupFn) => {
   <div class="min-h-screen">
     <!-- Header -->
     <div class="container mx-auto px-6 py-4 border-b border-[#DDDDDD]/40">
-      <h1 class="text-4xl font-display text-[#C2B042] text-center">Last Drive</h1>
+      <h1 class="text-4xl font-display text-white text-center">Last Drive</h1>
       <p class="mt-4 text-lg text-[#DDDDDD] text-center">
         Découvrez les dernières actualités de Last Drive, la roadmap, l'avancement du projet et rencontrez notre équipe passionnée.
       </p>
@@ -68,8 +68,8 @@ watchEffect((cleanupFn) => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious class="left-4 bg-black/50 hover:bg-[#C2B042] hover:cursor-pointer text-white border-white/20" />
+            <CarouselNext class="right-4 bg-black/50 hover:bg-[#C2B042] hover:cursor-pointer text-white border-white/20" />
           </Carousel>
         </div>
 
