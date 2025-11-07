@@ -195,7 +195,6 @@ const steps = [
         </Accordion>
       </div>
 
-      <!-- Sidebar Desktop (cachée sur mobile) -->
       <div class="hidden lg:block lg:w-1/4">
         <div class="sticky top-8 space-y-6">
           <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
@@ -251,7 +250,6 @@ const steps = [
       </div>
     </div>
 
-    <!-- Drawer Mobile (visible uniquement sur mobile < 1024px) -->
     <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50">
       <Sheet>
         <SheetTrigger as-child>
@@ -262,7 +260,6 @@ const steps = [
         </SheetTrigger>
         <SheetContent side="bottom" class="h-[80vh] overflow-y-auto bg-[#0a0a0a] border-t border-[#333333]">
           <div class="space-y-6 pb-6">
-            <!-- Timeline du projet -->
             <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
               <div class="flex justify-between items-center mb-3">
                 <h3 class="text-white font-semibold text-lg">Timeline du projet</h3>
@@ -272,7 +269,6 @@ const steps = [
               <p class="text-[#999999] text-sm">Le projet se termine le 23 janvier 2026</p>
             </div>
 
-            <!-- Avancée du projet -->
             <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
               <div class="flex justify-between items-center mb-3">
                 <h3 class="text-white font-semibold text-lg">Avancée du projet</h3>
@@ -281,7 +277,6 @@ const steps = [
               <Progress v-model="advancementProgress" class="w-full" />
             </div>
 
-            <!-- Informations et réseaux sociaux -->
             <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333] space-y-4">
               <div class="flex items-center gap-3 text-white">
                 <Gamepad2 class="w-5 h-5 text-[#C2B042]" />
