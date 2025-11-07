@@ -9,7 +9,7 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ref, watchEffect } from "vue"
 import { Progress } from "@/components/ui/progress"
-import { Check, Circle, Dot } from "lucide-vue-next"
+import { Check, Circle, Dot, MapPin, Gamepad2, Facebook, Instagram } from "lucide-vue-next"
 import { Button } from "@/components/ui/button"
 import { Stepper, StepperDescription, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/ui/stepper"
 
@@ -33,7 +33,7 @@ const teamMembers = [
   {
     name: "Lenny Fernet",
     role: "Développeur web et jeux",
-    photo: "/images/team/lenny.jpg"
+    photo: "/images/team/lenny3.jpg"
   },
   {
     name: "Ewen D'avanzo",
@@ -53,7 +53,7 @@ const advancementProgress = ref(8)
 watchEffect((cleanupFn) => {
   const timer = setTimeout(() => {
     progress.value = 10
-    advancementProgress.value = 8
+    advancementProgress.value = 14
   }, 500)
   cleanupFn(() => clearTimeout(timer))
 })
@@ -106,7 +106,7 @@ const steps = [
       </p>
     </div>
 
-    <div class="flex gap-8 mx-74 py-12">
+    <div class="flex gap-8 mx-38 py-12">
       <div class="flex-1">
         <div class="mb-12">
           <Carousel class="relative w-full">
@@ -115,7 +115,7 @@ const steps = [
                 <div class="p-1">
                   <Card>
                     <CardContent class="flex items-center justify-center p-0 overflow-hidden rounded-lg aspect-video ">
-                      <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover" />
+                      <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover hover:scale-105 transition" />
                     </CardContent>
                   </Card>
                 </div>
@@ -211,6 +211,39 @@ const steps = [
               <span class="text-white font-semibold text-lg">{{ advancementProgress }}%</span>
             </div>
             <Progress v-model="advancementProgress" class="w-full" />
+          </div>
+
+          <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333] space-y-4">
+            <div class="flex items-center gap-3 text-white">
+              <Gamepad2 class="w-5 h-5 text-[#C2B042]" />
+              <span class="text-sm">Jeux d'arcade</span>
+            </div>
+
+            <div class="flex items-center gap-3 text-white">
+              <MapPin class="w-5 h-5 text-[#C2B042]" />
+              <span class="text-sm">Troyes, France</span>
+            </div>
+
+            <div class="pt-2 border-t border-white/10">
+              <h4 class="text-white font-semibold mb-3 text-sm">Suivez-nous</h4>
+              <div class="flex gap-3">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#C2B042] transition-colors flex items-center justify-center text-white">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#C2B042] transition-colors flex items-center justify-center text-white">
+                  <Facebook class="w-5 h-5" />
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#C2B042] transition-colors flex items-center justify-center text-white">
+                  <Instagram class="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            <Button class="w-full bg-[#C2B042] hover:bg-[#C2B042]/90 text-white font-semibold mt-4">
+              Soutenir le projet
+            </Button>
           </div>
         </div>
       </div>
