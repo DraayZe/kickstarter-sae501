@@ -96,6 +96,16 @@ const steps = [
         "///",
   },
 ]
+
+const { data: home } = await useAsyncData(() => queryCollection('content')
+    .path('/')
+    .first()
+    )
+
+useSeoMeta({
+  title: home.value?.title,
+  description: home.value?.description
+})
 </script>
 
 <template>
@@ -105,6 +115,8 @@ const steps = [
       <p class="mt-4 text-base sm:text-lg text-[#DDDDDD] text-center max-w-3xl">
         Découvrez les dernières actualités de Last Drive, la roadmap, l'avancement du projet et rencontrez notre équipe passionnée.
       </p>
+      <ContentRenderer v-if="home" :value="home" />
+      <div v-else>Home not found</div>
     </div>
 
     <div class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 lg:mx-38 py-12 pb-24 lg:pb-12">
