@@ -9,9 +9,10 @@ import {
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ref, watchEffect } from "vue"
 import { Progress } from "@/components/ui/progress"
-import { Check, Circle, Dot, MapPin, Gamepad2, Facebook, Instagram } from "lucide-vue-next"
+import { Check, Circle, Dot, MapPin, Gamepad2, Facebook, Instagram, ChevronUp } from "lucide-vue-next"
 import { Button } from "@/components/ui/button"
 import { Stepper, StepperDescription, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/ui/stepper"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const images = [
   { src: '/images/image5.png', alt: 'Description image 5' },
@@ -99,15 +100,15 @@ const steps = [
 
 <template>
   <div class="min-h-screen">
-    <div class="container mx-auto px-6 py-4 border-b border-[#DDDDDD]/40 flex flex-col items-center">
-      <h1 class="text-4xl font-display text-white text-center">Last Drive</h1>
-      <p class="mt-4 text-lg text-[#DDDDDD] text-center">
+    <div class="container mx-auto px-4 sm:px-6 py-4 border-b border-[#DDDDDD]/40 flex flex-col items-center">
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white text-center">Last Drive</h1>
+      <p class="mt-4 text-base sm:text-lg text-[#DDDDDD] text-center max-w-3xl">
         Découvrez les dernières actualités de Last Drive, la roadmap, l'avancement du projet et rencontrez notre équipe passionnée.
       </p>
     </div>
 
-    <div class="flex gap-8 mx-38 py-12">
-      <div class="flex-1">
+    <div class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 lg:mx-38 py-12 pb-24 lg:pb-12">
+      <div class="flex-1 w-full">
         <div class="mb-12">
           <Carousel class="relative w-full">
             <CarouselContent>
@@ -130,7 +131,7 @@ const steps = [
           <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
             <AccordionTrigger class="text-white text-xl font-display2">{{ item.title }}</AccordionTrigger>
             <AccordionContent class="text-gray-200">
-              <div v-if="item.value === 'item-2'" class="grid grid-cols-3 gap-6">
+              <div v-if="item.value === 'item-2'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div v-for="member in teamMembers" :key="member.name" class="flex flex-col items-center text-center">
                   <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
                     <img :src="member.photo" :alt="member.name" class="w-full h-full object-cover" />
@@ -140,7 +141,7 @@ const steps = [
                 </div>
               </div>
               <div v-else-if="item.value === 'item-3'">
-                <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10 p-10" :default-value="2">
+                <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10 p-4 sm:p-10" :default-value="2">
                   <StepperItem
                       v-for="step in steps"
                       :key="step.step"
@@ -194,7 +195,8 @@ const steps = [
         </Accordion>
       </div>
 
-      <div class="w-1/4">
+      <!-- Sidebar Desktop (cachée sur mobile) -->
+      <div class="hidden lg:block lg:w-1/4">
         <div class="sticky top-8 space-y-6">
           <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
             <div class="flex justify-between items-center mb-3">
@@ -247,6 +249,74 @@ const steps = [
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Drawer Mobile (visible uniquement sur mobile < 1024px) -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-50">
+      <Sheet>
+        <SheetTrigger as-child>
+          <Button class="w-full rounded-none bg-[#C2B042] hover:bg-[#C2B042]/90 text-white font-semibold py-6 flex items-center justify-center gap-2">
+            <ChevronUp class="w-5 h-5" />
+            Informations du projet
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="bottom" class="h-[80vh] overflow-y-auto bg-[#0a0a0a] border-t border-[#333333]">
+          <div class="space-y-6 pb-6">
+            <!-- Timeline du projet -->
+            <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="text-white font-semibold text-lg">Timeline du projet</h3>
+                <span class="text-white font-semibold text-lg">{{ progress }}%</span>
+              </div>
+              <Progress v-model="progress" class="w-full mb-3" />
+              <p class="text-[#999999] text-sm">Le projet se termine le 23 janvier 2026</p>
+            </div>
+
+            <!-- Avancée du projet -->
+            <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333]">
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="text-white font-semibold text-lg">Avancée du projet</h3>
+                <span class="text-white font-semibold text-lg">{{ advancementProgress }}%</span>
+              </div>
+              <Progress v-model="advancementProgress" class="w-full" />
+            </div>
+
+            <!-- Informations et réseaux sociaux -->
+            <div class="bg-[#1a1a1a] rounded-lg p-6 border border-[#333333] space-y-4">
+              <div class="flex items-center gap-3 text-white">
+                <Gamepad2 class="w-5 h-5 text-[#C2B042]" />
+                <span class="text-sm">Jeux d'arcade</span>
+              </div>
+
+              <div class="flex items-center gap-3 text-white">
+                <MapPin class="w-5 h-5 text-[#C2B042]" />
+                <span class="text-sm">Troyes, France</span>
+              </div>
+
+              <div class="pt-2 border-t border-white/10">
+                <h4 class="text-white font-semibold mb-3 text-sm">Suivez-nous</h4>
+                <div class="flex gap-3">
+                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#C2B042] transition-colors flex items-center justify-center text-white">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#C2B042] transition-colors flex items-center justify-center text-white">
+                    <Facebook class="w-5 h-5" />
+                  </a>
+                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#C2B042] transition-colors flex items-center justify-center text-white">
+                    <Instagram class="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+
+              <Button class="w-full bg-[#C2B042] hover:bg-[#C2B042]/90 text-white font-semibold mt-4">
+                Soutenir le projet
+              </Button>
+            </div>
+          </div>
+        </SheetContent>
+      </Sheet>
     </div>
   </div>
 </template>
