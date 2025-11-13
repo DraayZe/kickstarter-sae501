@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "date": "2025-10-20",
+    "titre": "Lancement du projet Last Ride",
+    "images": [
+
+    ],
+    "contenu": "Lancement du projet et premières réflexions sur notre jeu. Nous voulons partir sur un thème post apocalyptique avec une ambiance nocturne et des mécaniques de gestion de ressources. L'équipe est motivée et prête à relever ce défi créatif passionnant.",
+    "tags": ["Lancement", "Concept", "Game design"],
+    "auteur": "Lenny, Loann, Ewen"
+  },
+  {
+    "id": 2,
+    "date": "2025-10-21",
+    "titre": "Les premiers moodboards",
+    "images": [
+      "/images/1moodboard.png",
+      "/images/2moodboard.png"
+    ],
+    "contenu": "Nous avons rassemblé une variété d'images et de couleurs pour définir l'esthétique de Last Ride. Deux types de moodboards ont été créés : un thème futuriste avec des néons et des technologies avancées, et un thème post-apocalyptique plus sombre et atmosphérique. Ces références visuelles guideront l'ensemble de notre direction artistique.",
+    "tags": ["Design", "Direction artistique", "Moodboard"],
+    "auteur": "Loann et Ewen"
+  },
+  {
+    "id": 3,
+    "date": "2025-10-23",
+    "titre": "Premiers concepts visuels sur Blender",
+    "images": [
+
+    ],
+    "contenu": "L'équipe artistique a travaillé d'arrache-pied pour créer l'ambiance unique de Last Drive. Les rues désertes, les bâtiments en ruine et l'atmosphère nocturne prennent vie grâce à Blender. Nous avons modélisé plusieurs assets clés : lampadaires brisés, véhicules abandonnés, et façades de buildings. Nous sommes impatients de vous montrer plus de visuels dans les prochaines semaines !",
+    "tags": ["3D", "Assets", "Blender"],
+    "auteur": "Loann et Ewen"
+  },
+  {
+    "id": 4,
+    "date": "2025-11-06",
+    "titre": "Développement du kickstarter",
+    "images": [
+
+    ],
+    "contenu": "Cette semaine a été consacrée au développement des mécaniques de gameplay principales. Le système de gestion de l'électricité est maintenant opérationnel, et les phares de la moto réagissent correctement en fonction du niveau de batterie. Le joueur doit équilibrer sa vitesse et l'utilisation de la lumière pour progresser dans le niveau. Prochaine étape : l'intégration des obstacles et des ennemis !",
+    "tags": ["Développement", "UX", "Fonctionnalités"],
+    "auteur": "Lenny"
+  },
+  {
+    "id": 5,
+    "date": "2025-11-07",
+    "titre": "Intégration du thème Lumière, nouveau moodboard et premier croquis",
+    "images": [
+
+    ],
+    "contenu": "Cette semaine a été marquée par une refonte créative importante. Nous avons intégré le thème de la lumière comme élément central du gameplay et de la narration. Le nouveau système de rendu volumétrique crée des faisceaux lumineux spectaculaires qui guident le joueur. Parallèlement, la production des assets 3D s'accélère avec une bibliothèque d'objets et d'environnements qui s'enrichit quotidiennement. Nous sommes ravis de vous annoncer la mise en place d'un nouveau système d'actualités pour suivre l'évolution en temps réel !",
+    "tags": ["production", "assets", "lumière"],
+    "auteur": "Lenny, Loann, Ewen"
+  },
+  {
+    "id": 6,
+    "date": "2025-11-12",
+    "titre": "Mise en place de notre projet sur la borne d'arcade test",
+    "images": [
+
+    ],
+    "contenu": "Nous avons déployer notre jeu sur la borne d'arcade de test ! Nous avons aussi configurer le système de retour au menu.  ",
+    "tags": ["Borne arcade", "Test", "Lancement"],
+    "auteur": "Lenny"
+  }
+]

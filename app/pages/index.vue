@@ -7,12 +7,21 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { ref, watchEffect } from "vue"
+import { ref, watchEffect, onMounted } from "vue"
 import { Progress } from "@/components/ui/progress"
-import { Check, Circle, Dot, MapPin, Gamepad2, Facebook, Instagram, ChevronUp } from "lucide-vue-next"
+import { Check, Circle, Dot, MapPin, Gamepad2, Facebook, Instagram, ChevronUp, Calendar } from "lucide-vue-next"
 import { Button } from "@/components/ui/button"
 import { Stepper, StepperDescription, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/ui/stepper"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
+interface Actualite {
+  id: number
+  date: string
+  titre: string
+  description: string
+  image: string
+  contenu: string
+}
 
 const images = [
   { src: '/images/image5.png', alt: 'Description image 5' },
@@ -50,6 +59,16 @@ const teamMembers = [
 
 const progress = ref(10)
 const advancementProgress = ref(8)
+const dernieresActualites = ref<Actualite[]>([])
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+}
 
 watchEffect((cleanupFn) => {
   const timer = setTimeout(() => {
@@ -57,6 +76,20 @@ watchEffect((cleanupFn) => {
     advancementProgress.value = 14
   }, 500)
   cleanupFn(() => clearTimeout(timer))
+})
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/data/actualites.json')
+    const data = await response.json()
+    // Trier par date décroissante et prendre les 3 dernières
+    const sorted = data.sort((a: Actualite, b: Actualite) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    )
+    dernieresActualites.value = sorted.slice(0, 3)
+  } catch (error) {
+    console.error('Erreur lors du chargement des actualités:', error)
+  }
 })
 
 const steps = [
@@ -107,7 +140,7 @@ const steps = [
       </p>
     </div>
 
-    <div class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 lg:mx-38 py-12 pb-24 lg:pb-12">
+    <div class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 lg:mx-44 py-12 pb-24 lg:pb-12">
       <div class="flex-1 w-full">
         <div class="mb-12">
           <Carousel class="relative w-full">
@@ -129,7 +162,7 @@ const steps = [
 
         <Accordion type="multiple" class="w-full" collapsible :default-value="defaultValue">
           <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
-            <AccordionTrigger class="text-white text-xl font-display2">{{ item.title }}</AccordionTrigger>
+            <AccordionTrigger class="text-white text-xl font-display2 hover:cursor-pointer">{{ item.title }}</AccordionTrigger>
             <AccordionContent class="text-gray-200">
               <div v-if="item.value === 'item-2'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div v-for="member in teamMembers" :key="member.name" class="flex flex-col items-center text-center">
@@ -186,6 +219,36 @@ const steps = [
                     </div>
                   </StepperItem>
                 </Stepper>
+              </div>
+              <div v-else-if="item.value === 'item-4'" class="space-y-4">
+                <div v-if="dernieresActualites.length === 0" class="text-gray-400">
+                  Chargement des actualités...
+                </div>
+                <div
+                  v-for="actualite in dernieresActualites"
+                  :key="actualite.id"
+                  class="flex gap-4 bg-[#1a1a1a] rounded-lg overflow-hidden border border-[#333333] hover:border-[#C2B042]/50 transition-colors p-3"
+                >
+                  <div class="w-32 h-24 flex-shrink-0">
+                    <img
+                      :src="actualite.image"
+                      :alt="actualite.titre"
+                      class="w-full h-full object-cover rounded"
+                    />
+                  </div>
+                  <NuxtLink to="/actualite" class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 text-[#C2B042] text-xs mb-1">
+                      <Calendar class="w-3 h-3" />
+                      <span>{{ formatDate(actualite.date) }}</span>
+                    </div>
+                    <h3 class="text-white font-semibold text-base mb-1 truncate">
+                      {{ actualite.titre }}
+                    </h3>
+                    <p class="text-gray-400 text-sm line-clamp-2">
+                      {{ actualite.description }}
+                    </p>
+                  </NuxtLink>
+                </div>
               </div>
               <div v-else>
                 {{ item.content }}
