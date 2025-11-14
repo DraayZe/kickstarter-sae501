@@ -34,7 +34,6 @@ const route = useRoute();
           </NuxtLink>
         </div>
 
-        <!-- Mobile Menu Button -->
         <button
           class="md:hidden text-gray-700 hover:text-blue-600 transition"
           @click="mobileMenuOpen = !mobileMenuOpen"
@@ -45,7 +44,6 @@ const route = useRoute();
         </button>
       </div>
 
-      <!-- Mobile Menu -->
       <div
         v-if="mobileMenuOpen"
         class="md:hidden mt-4 pb-4 space-y-3"
