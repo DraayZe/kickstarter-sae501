@@ -6,7 +6,7 @@ const route = useRoute();
   <header>
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
-        <NuxtLink to="/" class="text-4xl font-display2 text-[#DDDDDD]">
+        <NuxtLink to="/" class="text-4xl font-display2 text-foreground">
           Pixen
         </NuxtLink>
 
@@ -14,28 +14,21 @@ const route = useRoute();
           <NuxtLink
               to="/actualite"
               class="font-display2"
-              :class="route.path === '/actualite' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
+              :class="route.path === '/actualite' ? 'text-primary' : 'text-foreground'"
           >
             Actualités
           </NuxtLink>
           <NuxtLink
               to="/roadmap"
               class="font-display2"
-              :class="route.path === '/roadmap' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
+              :class="route.path === '/roadmap' ? 'text-primary' : 'text-foreground'"
           >
             Roadmap
           </NuxtLink>
           <NuxtLink
-              to="/avancement"
-              class="font-display2"
-              :class="route.path === '/avancement' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
-          >
-            Avancement
-          </NuxtLink>
-          <NuxtLink
               to="/equipe"
               class="font-display2"
-              :class="route.path === '/equipe' ? 'text-[#C2B042]' : 'text-[#DDDDDD]'"
+              :class="route.path === '/equipe' ? 'text-primary' : 'text-foreground'"
           >
             Équipe
           </NuxtLink>

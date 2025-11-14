@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "date": "2025-10-20",
+    "titre": "Lancement du projet Last Ride",
+    "images": [
+      "/images/actualite/lancement.png"
+    ],
+    "contenu": "Lancement du projet et premières réflexions sur notre jeu. Nous voulons partir sur un thème post apocalyptique avec une ambiance nocturne et des mécaniques de gestion de ressources. L'équipe est motivée et prête à relever ce défi créatif passionnant.",
+    "tags": ["Lancement", "Concept", "Game design"],
+    "auteur": "Lenny, Loann, Ewen"
+  },
+  {
+    "id": 2,
+    "date": "2025-10-21",
+    "titre": "Les premiers moodboards",
+    "images": [
+      "/images/actualite/1moodboard.png",
+      "/images/actualite/2moodboard.png"
+    ],
+    "contenu": "Nous avons rassemblé une variété d'images et de couleurs pour définir l'esthétique de Last Ride. Deux types de moodboards ont été créés : un thème futuriste avec des néons et des technologies avancées, et un thème post-apocalyptique plus sombre et atmosphérique. Ces références visuelles guideront l'ensemble de notre direction artistique.",
+    "tags": ["Design", "Direction artistique", "Moodboard"],
+    "auteur": "Loann et Ewen"
+  },
+  {
+    "id": 3,
+    "date": "2025-10-23",
+    "titre": "Premiers concepts visuels sur Blender",
+    "images": [
+      "/images/actualite/1blender.png",
+      "/images/actualite/2blender.png"
+    ],
+    "contenu": "L'équipe artistique a travaillé pour créer l'ambiance unique de Last Drive. Des lampadaires, des batiments et des voitures abandonnées",
+    "tags": ["3D", "Assets", "Blender"],
+    "auteur": "Loann et Ewen"
+  },
+  {
+    "id": 4,
+    "date": "2025-11-06",
+    "titre": "Développement du kickstarter",
+    "images": [
+      "/images/actualite/kickstarterv1.png"
+    ],
+    "contenu": "Développement de la page Kickstarter pour notre projet Last Ride. Nous avons travaillé sur la rédaction du contenu et de créer un site web attrayant pour les potentiels personnes souhaitant financer le projet. Notre objectif est de présenter clairement notre vision du jeu et d'inciter la communauté à nous soutenir dans cette aventure passionnante.",
+    "tags": ["Développement", "UX", "Fonctionnalités"],
+    "auteur": "Lenny"
+  },
+  {
+    "id": 5,
+    "date": "2025-11-07",
+    "titre": "Intégration du nouveau moodboard, refonte kickstarter et premier croquis",
+    "images": [
+      "/images/actualite/3moodboard.png"
+    ],
+    "contenu": "Cette semaine a été marquée par une étape créative majeure. Nous avons repensé en profondeur l’univers visuel de notre jeu, ce qui nous a également amenés à ajuster le thème de notre future campagne Kickstarter. L’ambiance générale s’oriente désormais vers une esthétique de ville nocturne, sombre et oppressante, afin d’accentuer l’atmosphère immersive que nous souhaitons transmettre aux joueurs.\n\nParallèlement, les premiers croquis de notre jeu d’arcade et de l’univers du jeu ont été réalisés. Ces visuels préliminaires nous permettent de mieux nous projeter dans la direction artistique finale et de consolider notre vision pour la suite du développement.",
+    "tags": ["Production", "Assets", "Refonte"],
+    "auteur": "Lenny, Loann, Ewen"
+  },
+  {
+    "id": 6,
+    "date": "2025-11-12",
+    "titre": "Mise en place de notre projet sur la borne d'arcade test",
+    "images": [
+      "/images/actualite/borne-test.jpg"
+    ],
+    "contenu": "Nous avons déployé notre jeu sur la borne d’arcade de test, ce qui nous a permis de valider son bon fonctionnement dans des conditions réelles d’utilisation. Nous avons également configuré le système de retour au menu principal afin d’assurer une navigation fluide et intuitive pour les utilisateurs.  ",
+    "tags": ["Borne arcade", "Développement", "Lancement"],
+    "auteur": "Lenny"
+  }
+]
