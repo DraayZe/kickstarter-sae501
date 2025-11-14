@@ -24,10 +24,9 @@ interface Actualite {
 }
 
 const images = [
-  { src: '/images/image5.png', alt: 'Description image 5' },
+  { src: '/images/image1.png', alt: 'Description image 5' },
   { src: '/images/image2.png', alt: 'Description image 2' },
-  { src: '/images/image4.png', alt: 'Description image 4' },
-  { src: '/images/image6.png', alt: 'Description image 6' }
+  { src: '/images/image3.png', alt: 'Description image 4' }
 ]
 
 const defaultValue = "item-1"
@@ -82,7 +81,6 @@ onMounted(async () => {
   try {
     const response = await fetch('/data/actualites.json')
     const data = await response.json()
-    // Trier par date décroissante et prendre les 3 dernières
     const sorted = data.sort((a: Actualite, b: Actualite) =>
       new Date(b.date).getTime() - new Date(a.date).getTime()
     )
@@ -133,14 +131,19 @@ const steps = [
 
 <template>
   <div class="min-h-screen">
-    <div class="container mx-auto px-4 sm:px-6 py-4 border-b border-foreground/40 flex flex-col items-center">
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white text-center">Last Ride</h1>
-      <p class="mt-4 text-base sm:text-lg text-foreground text-center max-w-3xl">
-        Découvrez les dernières actualités de Last Ride, la roadmap, l'avancement du projet et rencontrez notre équipe passionnée.
-      </p>
+    <div class="container mx-auto px-4 sm:px-6 py-4 flex items-start">
+      <div>
+        <img src="" alt="Last Ride Logo" class="w-32 sm:w-48 mb-4" />
+      </div>
+      <div class="flex flex-col ml-4 sm:ml-8">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white">Last Ride</h1>
+        <p class="mt-4 text-gray-400 text-sm sm:text-base max-w-3xl">
+          Découvrez les dernières actualités de Last Ride, la roadmap, l'avancement du projet et rencontrez notre équipe passionnée.
+        </p>
+      </div>
     </div>
 
-    <div class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 lg:mx-44 py-12 pb-24 lg:pb-12">
+    <div class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 lg:mx-35 py-12 pb-24 lg:pb-12">
       <div class="flex-1 w-full">
         <div class="mb-12">
           <Carousel class="relative w-full">
@@ -305,7 +308,7 @@ const steps = [
               </div>
             </div>
 
-            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-4">
+            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-4 hover:cursor-pointer">
               Soutenir le projet
             </Button>
           </div>
