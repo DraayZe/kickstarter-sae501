@@ -80,8 +80,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="min-h-screen ">
-    <div class="container mx-auto px-4 sm:px-6 py-8 lg:py-12 ">
+  <div class="min-h-screen pb-12">
+    <div class="container mx-auto px-4 sm:px-6 py-8 lg:py-12">
       <div class="max-w-7xl mx-auto">
         <div class="mb-16 text-start ">
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white mb-6">
@@ -214,15 +214,15 @@ onMounted(async () => {
           </article>
         </div>
 
-        <div class="mt-16 text-center">
-          <NuxtLink
-              to="/"
-              class="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-gray-100 text-gray-900 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
-          >
-            <ChevronLeft class="w-5 h-5" />
-            Retour à l'accueil
-          </NuxtLink>
-        </div>
+<!--        <div class="mt-16 text-center">-->
+<!--          <NuxtLink-->
+<!--              to="/"-->
+<!--              class="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-gray-100 text-gray-900 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"-->
+<!--          >-->
+<!--            <ChevronLeft class="w-5 h-5" />-->
+<!--            Retour à l'accueil-->
+<!--          </NuxtLink>-->
+<!--        </div>-->
       </div>
     </div>
   </div>

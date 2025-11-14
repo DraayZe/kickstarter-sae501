@@ -18,9 +18,11 @@ interface Actualite {
   id: number
   date: string
   titre: string
-  description: string
-  image: string
+  description?: string
+  images: string[]
   contenu: string
+  tags?: string[]
+  auteur?: string
 }
 
 const images = [
@@ -234,7 +236,7 @@ const steps = [
                 >
                   <div class="w-32 h-24 flex-shrink-0">
                     <img
-                      :src="actualite.image"
+                      :src="actualite.images[0]"
                       :alt="actualite.titre"
                       class="w-full h-full object-cover rounded"
                     />
@@ -248,7 +250,7 @@ const steps = [
                       {{ actualite.titre }}
                     </h3>
                     <p class="text-gray-400 text-sm line-clamp-2">
-                      {{ actualite.description }}
+                      {{ actualite.description || actualite.contenu }}
                     </p>
                   </NuxtLink>
                 </div>
@@ -302,7 +304,7 @@ const steps = [
                 <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <Facebook class="w-5 h-5" />
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                <a href="https://www.instagram.com/mathiaspacko/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <Instagram class="w-5 h-5" />
                 </a>
               </div>
@@ -365,7 +367,7 @@ const steps = [
                   <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
                     <Facebook class="w-5 h-5" />
                   </a>
-                  <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                  <a href="https://www.instagram.com/mathiaspacko/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
                     <Instagram class="w-5 h-5" />
                   </a>
                 </div>

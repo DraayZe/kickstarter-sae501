@@ -26,13 +26,6 @@ const route = useRoute();
             Roadmap
           </NuxtLink>
           <NuxtLink
-              to="/avancement"
-              class="font-display2"
-              :class="route.path === '/avancement' ? 'text-primary' : 'text-foreground'"
-          >
-            Avancement
-          </NuxtLink>
-          <NuxtLink
               to="/equipe"
               class="font-display2"
               :class="route.path === '/equipe' ? 'text-primary' : 'text-foreground'"
