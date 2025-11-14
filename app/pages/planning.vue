@@ -3,7 +3,7 @@ import { Check, Circle, Dot, Sparkles } from 'lucide-vue-next'
 import { Stepper, StepperDescription, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/ui/stepper"
 import { Button } from "@/components/ui/button"
 
-interface RoadmapPhase {
+interface PlanningPhase {
   id: number
   step: number
   title: string
@@ -14,7 +14,7 @@ interface RoadmapPhase {
   icon?: any
 }
 
-const phases: RoadmapPhase[] = [
+const phases: PlanningPhase[] = [
   {
     id: 1,
     step: 1,
@@ -108,80 +108,82 @@ const currentStep = phases.find(p => p.status === 'in-progress')?.step || 3
   <div class="min-h-screen pb-12">
     <div class="container mx-auto px-4 sm:px-6 py-8 lg:py-12">
       <div class="max-w-7xl mx-auto">
-        <div class="mb-16 text-start">
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white mb-6">
-            Roadmap du projet
+        <div class="mb-8 sm:mb-12 lg:mb-16 text-start">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white mb-4 sm:mb-6">
+            Planning du projet
           </h2>
           <p class="text-gray-400 text-sm sm:text-base max-w-3xl">
             Suivez l'évolution du développement de Last Ride, de la conception jusqu'au déploiement final.
           </p>
         </div>
 
-        <div class="bg-card rounded-2xl border border-border p-6 sm:p-8 lg:p-12">
-          <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10" :default-value="currentStep">
+        <div class="bg-card rounded-xl sm:rounded-2xl border border-border p-4 sm:p-6 lg:p-12">
+          <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-6 sm:gap-8 lg:gap-10" :default-value="currentStep">
             <StepperItem
               v-for="phase in phases"
               :key="phase.step"
               v-slot="{ state }"
-              class="relative flex w-full items-start gap-6"
+              class="relative flex w-full items-start gap-2 sm:gap-4 lg:gap-6"
               :step="phase.step"
             >
               <StepperSeparator
                 v-if="phase.step !== phases[phases.length - 1].step"
-                class="absolute left-[18px] top-[38px] block h-[105%] w-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-primary"
+                class="absolute left-[14px] sm:left-[18px] top-[38px] block h-[105%] w-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-primary"
               />
 
               <StepperTrigger as-child>
                 <Button
                   :variant="state === 'inactive' ? 'outline' : 'default'"
                   size="icon"
-                  class="z-10 rounded-full shrink-0 border-white/20"
+                  class="z-10 rounded-full shrink-0 border-white/20 h-8 w-8 sm:h-10 sm:w-10"
                   :class="[
                     state === 'active' && 'bg-primary hover:bg-primary/90 text-primary-foreground',
                     state === 'completed' && 'bg-primary hover:bg-primary/90 text-primary-foreground',
                     state === 'inactive' && 'bg-transparent border-white/40 text-white hover:bg-transparent'
                   ]"
                 >
-                  <Check v-if="state === 'completed'" class="size-5" />
-                  <Circle v-if="state === 'active'" />
-                  <Dot v-if="state === 'inactive'" />
+                  <Check v-if="state === 'completed'" class="size-4 sm:size-5" />
+                  <Circle v-if="state === 'active'" class="size-4 sm:size-5" />
+                  <Dot v-if="state === 'inactive'" class="size-4 sm:size-5" />
                 </Button>
               </StepperTrigger>
 
-              <div class="flex flex-col gap-3 flex-1">
+              <div class="flex flex-col gap-2 sm:gap-3 flex-1 min-w-0 max-w-full">
                 <StepperTitle
                   :class="[state === 'active' && 'text-primary']"
-                  class="text-base font-semibold transition lg:text-lg text-white"
+                  class="text-sm sm:text-base font-semibold transition lg:text-lg text-white break-words leading-snug pr-2 whitespace-normal word-break-break-word"
+                  style="overflow-wrap: break-word; word-wrap: break-word;"
                 >
                   {{ phase.title }}
                 </StepperTitle>
                 <StepperDescription
-                  class="text-sm text-gray-400 transition lg:text-base"
+                  class="text-xs sm:text-sm text-gray-400 transition lg:text-base break-words pr-2 whitespace-normal"
+                  style="overflow-wrap: break-word;"
                 >
                   {{ phase.description }}
                 </StepperDescription>
 
-                <div v-if="state === 'completed'" class="inline-flex items-center gap-2 text-green-500 text-sm font-medium w-fit">
-                  <Check class="w-4 h-4" />
+                <div v-if="state === 'completed'" class="inline-flex items-center gap-2 text-green-500 text-xs sm:text-sm font-medium w-fit">
+                  <Check class="w-3 h-3 sm:w-4 sm:h-4" />
                   Phase terminée
                 </div>
 
-                <div class="mt-4 space-y-3">
-                  <h4 class="text-white font-semibold text-sm flex items-center gap-2">
-                    <Sparkles class="w-4 h-4 text-primary" />
-                    Tâches principales
+                <div class="mt-2 sm:mt-4 space-y-2 sm:space-y-3">
+                  <h4 class="text-white font-semibold text-xs sm:text-sm flex items-center gap-2">
+                    <Sparkles class="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                    <span>Tâches principales</span>
                   </h4>
                   <div class="grid grid-cols-1 gap-2">
                     <div
                       v-for="(task, taskIndex) in phase.tasks"
                       :key="taskIndex"
-                      class="flex items-start gap-3 bg-white/5 rounded-lg p-3 border border-white/10"
+                      class="flex items-start gap-2 sm:gap-3 bg-white/5 rounded-lg p-2 sm:p-3 border border-white/10"
                     >
                       <Check
-                        class="w-4 h-4 flex-shrink-0 mt-0.5"
+                        class="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5"
                         :class="state === 'completed' ? 'text-primary' : state === 'active' ? 'text-primary' : 'text-gray-500'"
                       />
-                      <span class="text-gray-300 text-sm">{{ task }}</span>
+                      <span class="text-gray-300 text-xs sm:text-sm break-words">{{ task }}</span>
                     </div>
                   </div>
                 </div>

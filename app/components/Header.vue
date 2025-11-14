@@ -19,11 +19,11 @@ const route = useRoute();
             Actualités
           </NuxtLink>
           <NuxtLink
-              to="/roadmap"
+              to="/planning"
               class="font-display2"
-              :class="route.path === '/roadmap' ? 'text-primary' : 'text-foreground'"
+              :class="route.path === '/planning' ? 'text-primary' : 'text-foreground'"
           >
-            Roadmap
+            Planning
           </NuxtLink>
           <NuxtLink
               to="/equipe"
@@ -35,7 +35,7 @@ const route = useRoute();
         </div>
 
         <button
-          class="md:hidden text-gray-700 hover:text-blue-600 transition"
+          class="md:hidden text-foreground hover:text-primary transition"
           @click="mobileMenuOpen = !mobileMenuOpen"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,39 +44,56 @@ const route = useRoute();
         </button>
       </div>
 
+      <!-- Mobile Menu Sidebar -->
       <div
         v-if="mobileMenuOpen"
-        class="md:hidden mt-4 pb-4 space-y-3"
+        class="md:hidden fixed inset-y-0 right-0 w-1/2 bg-card border-l border-border z-50 shadow-2xl"
       >
-        <NuxtLink
-          to="/actualite"
-          class="block text-gray-700 hover:text-blue-600 transition font-medium"
-          :class="{ 'text-blue-600': route.path === '/actualite' }"
-        >
-          Actualités
-        </NuxtLink>
-        <NuxtLink
-          to="/roadmap"
-          class="block text-gray-700 hover:text-blue-600 transition font-medium"
-          :class="{ 'text-blue-600': route.path === '/roadmap' }"
-        >
-          Roadmap
-        </NuxtLink>
-        <NuxtLink
-          to="/avancement"
-          class="block text-gray-700 hover:text-blue-600 transition font-medium"
-          :class="{ 'text-blue-600': route.path === '/avancement' }"
-        >
-          Avancement
-        </NuxtLink>
-        <NuxtLink
-          to="/equipe"
-          class="block text-gray-700 hover:text-blue-600 transition font-medium"
-          :class="{ 'text-blue-600': route.path === '/equipe' }"
-        >
-          Équipe
-        </NuxtLink>
+        <div class="flex flex-col h-full p-6">
+          <button
+            @click="mobileMenuOpen = false"
+            class="self-end text-foreground hover:text-primary transition mb-8"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <div class="space-y-4">
+            <NuxtLink
+              to="/actualite"
+              @click="mobileMenuOpen = false"
+              class="block text-foreground hover:text-primary transition font-display2 text-lg py-2"
+              :class="{ 'text-primary': route.path === '/actualite' }"
+            >
+              Actualités
+            </NuxtLink>
+            <NuxtLink
+              to="/planning"
+              @click="mobileMenuOpen = false"
+              class="block text-foreground hover:text-primary transition font-display2 text-lg py-2"
+              :class="{ 'text-primary': route.path === '/planning' }"
+            >
+              Planning
+            </NuxtLink>
+            <NuxtLink
+              to="/equipe"
+              @click="mobileMenuOpen = false"
+              class="block text-foreground hover:text-primary transition font-display2 text-lg py-2"
+              :class="{ 'text-primary': route.path === '/equipe' }"
+            >
+              Équipe
+            </NuxtLink>
+          </div>
+        </div>
       </div>
+
+      <!-- Backdrop -->
+      <div
+        v-if="mobileMenuOpen"
+        @click="mobileMenuOpen = false"
+        class="md:hidden fixed inset-0 bg-black/50 z-40"
+      ></div>
     </nav>
   </header>
 </template>
