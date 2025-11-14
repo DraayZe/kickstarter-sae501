@@ -15,8 +15,8 @@
     "date": "2025-10-21",
     "titre": "Les premiers moodboards",
     "images": [
-      "/images/1moodboard.png",
-      "/images/2moodboard.png"
+      "/images/actualite/1moodboard.png",
+      "/images/actualite/2moodboard.png"
     ],
     "contenu": "Nous avons rassemblé une variété d'images et de couleurs pour définir l'esthétique de Last Ride. Deux types de moodboards ont été créés : un thème futuriste avec des néons et des technologies avancées, et un thème post-apocalyptique plus sombre et atmosphérique. Ces références visuelles guideront l'ensemble de notre direction artistique.",
     "tags": ["Design", "Direction artistique", "Moodboard"],
@@ -29,7 +29,7 @@
     "images": [
 
     ],
-    "contenu": "L'équipe artistique a travaillé d'arrache-pied pour créer l'ambiance unique de Last Drive. Les rues désertes, les bâtiments en ruine et l'atmosphère nocturne prennent vie grâce à Blender. Nous avons modélisé plusieurs assets clés : lampadaires brisés, véhicules abandonnés, et façades de buildings. Nous sommes impatients de vous montrer plus de visuels dans les prochaines semaines !",
+    "contenu": "L'équipe artistique a travaillé pour créer l'ambiance unique de Last Drive. Des lampadaires, des batiments et des voitures abandonnées",
     "tags": ["3D", "Assets", "Blender"],
     "auteur": "Loann et Ewen"
   },
@@ -40,19 +40,19 @@
     "images": [
 
     ],
-    "contenu": "Cette semaine a été consacrée au développement des mécaniques de gameplay principales. Le système de gestion de l'électricité est maintenant opérationnel, et les phares de la moto réagissent correctement en fonction du niveau de batterie. Le joueur doit équilibrer sa vitesse et l'utilisation de la lumière pour progresser dans le niveau. Prochaine étape : l'intégration des obstacles et des ennemis !",
+    "contenu": "Développement de la page Kickstarter pour notre projet Last Ride. Nous avons travaillé sur la rédaction du contenu et de créer un site web attrayant pour les potentiels personnes souhaitant financer le projet. Notre objectif est de présenter clairement notre vision du jeu et d'inciter la communauté à nous soutenir dans cette aventure passionnante.",
     "tags": ["Développement", "UX", "Fonctionnalités"],
     "auteur": "Lenny"
   },
   {
     "id": 5,
     "date": "2025-11-07",
-    "titre": "Intégration du thème Lumière, nouveau moodboard et premier croquis",
+    "titre": "Intégration du nouveau moodboard, refonte kickstarter et premier croquis",
     "images": [
 
     ],
-    "contenu": "Cette semaine a été marquée par une refonte créative importante. Nous avons intégré le thème de la lumière comme élément central du gameplay et de la narration. Le nouveau système de rendu volumétrique crée des faisceaux lumineux spectaculaires qui guident le joueur. Parallèlement, la production des assets 3D s'accélère avec une bibliothèque d'objets et d'environnements qui s'enrichit quotidiennement. Nous sommes ravis de vous annoncer la mise en place d'un nouveau système d'actualités pour suivre l'évolution en temps réel !",
-    "tags": ["production", "assets", "lumière"],
+    "contenu": "Cette semaine a été marquée par une étape créative majeure. Nous avons repensé en profondeur l’univers visuel de notre jeu, ce qui nous a également amenés à ajuster le thème de notre future campagne Kickstarter. L’ambiance générale s’oriente désormais vers une esthétique de ville nocturne, sombre et oppressante, afin d’accentuer l’atmosphère immersive que nous souhaitons transmettre aux joueurs.\n\nParallèlement, les premiers croquis de notre jeu d’arcade et de l’univers du jeu ont été réalisés. Ces visuels préliminaires nous permettent de mieux nous projeter dans la direction artistique finale et de consolider notre vision pour la suite du développement.",
+    "tags": ["Production", "Assets", "Refonte"],
     "auteur": "Lenny, Loann, Ewen"
   },
   {
@@ -62,8 +62,8 @@
     "images": [
 
     ],
-    "contenu": "Nous avons déployer notre jeu sur la borne d'arcade de test ! Nous avons aussi configurer le système de retour au menu.  ",
-    "tags": ["Borne arcade", "Test", "Lancement"],
+    "contenu": "Nous avons déployé notre jeu sur la borne d’arcade de test, ce qui nous a permis de valider son bon fonctionnement dans des conditions réelles d’utilisation. Nous avons également configuré le système de retour au menu principal afin d’assurer une navigation fluide et intuitive pour les utilisateurs.  ",
+    "tags": ["Borne arcade", "Développement", "Lancement"],
     "auteur": "Lenny"
   }
 ]

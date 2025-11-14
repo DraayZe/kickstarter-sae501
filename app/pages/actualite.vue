@@ -71,11 +71,11 @@ onMounted(async () => {
     <div class="container mx-auto px-4 sm:px-6 py-8 lg:py-12">
       <div class="max-w-7xl mx-auto">
         <div class="mb-16 text-start">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display text-white mb-6">
+          <h1 class="text-3xl sm:text-4xl lg:text-4xl font-display text-white mb-6">
             Toutes les actualités du projet
           </h1>
-          <p class="text-gray-400 text-lg sm:text-xl max-w-3xl">
-            Suivez l'évolution du projet Last Drive, du début jusqu'à aujourd'hui.
+          <p class="text-gray-400 text-sm sm:text-xl max-w-3xl">
+            Suivez l'évolution du projet Last Ride, du début jusqu'à aujourd'hui.
           </p>
         </div>
 
@@ -133,7 +133,7 @@ onMounted(async () => {
                 </div>
 
                 <div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-                  <div class="border-l-4 border-[#C2B042] pl-6">
+                  <div class="border-l-4 border-primary pl-6">
                     <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                       {{ actualite.titre }}
                     </h2>
@@ -142,9 +142,9 @@ onMounted(async () => {
               </div>
             </div>
 
-            <div class="bg-[#1a1a1a] rounded-xl p-8 lg:p-12 border border-[#333333]">
+            <div class="bg-card rounded-xl p-8 lg:p-12 border border-border">
               <div class="flex flex-wrap items-center gap-4 mb-8 text-sm">
-                <div class="flex items-center gap-2 text-[#C2B042]">
+                <div class="flex items-center gap-2 text-primary">
                   <Calendar class="w-4 h-4" />
                   <span class="font-medium">{{ formatDate(actualite.date) }}</span>
                 </div>
@@ -158,14 +158,14 @@ onMounted(async () => {
                   <span
                       v-for="tag in actualite.tags"
                       :key="tag"
-                      class="px-3 py-1 bg-[#C2B042]/10 text-[#C2B042] text-xs font-medium rounded-full border border-[#C2B042]/30"
+                      class="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/30"
                   >
                     {{ tag }}
                   </span>
                 </div>
               </div>
 
-              <div class="h-px bg-gradient-to-r from-transparent via-[#333333] to-transparent mb-8"></div>
+              <div class="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8"></div>
 
               <div class="prose prose-invert prose-lg max-w-none">
                 <h3 class="text-xl font-bold text-white mb-4">Détails</h3>
