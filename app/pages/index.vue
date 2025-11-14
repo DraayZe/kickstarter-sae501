@@ -140,7 +140,7 @@ const steps = [
       <div class="flex flex-col ml-4 sm:ml-8">
         <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white">Last Ride</h1>
         <p class="mt-4 text-gray-400 text-sm sm:text-base max-w-3xl">
-          Découvrez les dernières actualités de Last Ride, la roadmap, l'avancement du projet et rencontrez notre équipe passionnée.
+          Découvrez les dernières actualités de Last Ride, le planning et rencontrez notre équipe passionnée.
         </p>
       </div>
     </div>
