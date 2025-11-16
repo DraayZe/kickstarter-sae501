@@ -50,8 +50,9 @@ npm run dev
 Compiler l'application pour la production :
 
 ```bash
-npm run build ou nuxt generate pour déployer en mode statique
+npm run build ou nuxt generate 
 ```
+Nuxt generate : déployer en mode statique
 
 Prévisualiser la version de production localement :
 
@@ -61,7 +62,9 @@ npm run preview
 
 ## Déploiement
 
-Consultez la [documentation de déploiement Nuxt](https://nuxt.com/docs/getting-started/deployment) pour plus d'informations.
+Le projet est configuré avec un workflow pour un déploiement automatique sur Infomaniak via GitHub Actions.
+
+- Déployer automatiquement à chaque push sur `main`
 
 ## Calendrier du projet
 
