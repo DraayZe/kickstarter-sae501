@@ -44,7 +44,7 @@ const teamMembers = [
   {
     name: "Lenny Fernet",
     role: "Développeur web et jeux",
-    photo: "/images/team/lenny4.png"
+    photo: "/images/team/lenny4.jpg"
   },
   {
     name: "Ewen D'avanzo",
