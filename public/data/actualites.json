@@ -41,7 +41,7 @@
     "images": [
       "/images/actualite/kickstarterv1.png"
     ],
-    "contenu": "Développement de la page Kickstarter pour notre projet Last Ride. Nous avons travaillé sur la rédaction du contenu et de créer un site web attrayant pour les potentiels personnes souhaitant financer le projet. Notre objectif est de présenter clairement notre vision du jeu et d'inciter la communauté à nous soutenir dans cette aventure passionnante.",
+    "contenu": "Développement de la page Kickstarter pour notre projet Last Ride. Nous avons travaillé sur la rédaction du contenu et de créer un site web attrayant pour les potentiels personnes souhaitant financer le projet. Notre objectif est de présenter clairement notre vision du jeu et d'inciter la communauté à nous soutenir dans cette aventure.",
     "tags": ["Développement", "UX", "Fonctionnalités"],
     "auteur": "Lenny"
   },
@@ -50,7 +50,9 @@
     "date": "2025-11-07",
     "titre": "Intégration du nouveau moodboard, refonte kickstarter et premier croquis",
     "images": [
-      "/images/actualite/3moodboard.png"
+      "/images/actualite/3moodboard.png",
+      "/images/actualite/kickstarterv2.png",
+      "/images/actualite/croquis1.jpg"
     ],
     "contenu": "Cette semaine a été marquée par une étape créative majeure. Nous avons repensé en profondeur l’univers visuel de notre jeu, ce qui nous a également amenés à ajuster le thème de notre future campagne Kickstarter. L’ambiance générale s’oriente désormais vers une esthétique de ville nocturne, sombre et oppressante, afin d’accentuer l’atmosphère immersive que nous souhaitons transmettre aux joueurs.\n\nParallèlement, les premiers croquis de notre jeu d’arcade et de l’univers du jeu ont été réalisés. Ces visuels préliminaires nous permettent de mieux nous projeter dans la direction artistique finale et de consolider notre vision pour la suite du développement.",
     "tags": ["Production", "Assets", "Refonte"],
@@ -63,8 +65,34 @@
     "images": [
       "/images/actualite/borne-test.jpg"
     ],
-    "contenu": "Nous avons déployé notre jeu sur la borne d’arcade de test, ce qui nous a permis de valider son bon fonctionnement dans des conditions réelles d’utilisation. Nous avons également configuré le système de retour au menu principal afin d’assurer une navigation fluide et intuitive pour les utilisateurs.  ",
+    "contenu": "Nous avons déployé notre jeu sur la borne d’arcade de test, ce qui nous a permis de valider son bon fonctionnement dans des conditions réelles d’utilisation. Nous avons également configuré le système de retour au menu principal.",
     "tags": ["Borne arcade", "Développement", "Lancement"],
     "auteur": "Lenny"
+  },
+  {
+    "id": 7,
+    "date": "2025-11-13",
+    "titre": "Nouveaux modèle 3D, logos et avancement du jeu sur Unity",
+    "images": [
+      "/images/actualite/3blender.png",
+      "/images/actualite/4blender.png",
+      "/images/actualite/logo_last_ride.png",
+      "/images/actualite/logo_studio_pixel.png",
+      "/images/actualite/apercu-jeux.png"
+    ],
+    "contenu": "Ewen et Loann ont réalisés de nouveaux batiments sur Blender, en accord avec le nouveau moodboard. Ewen a également créé le logo du jeu et du studio Pixel Studio. En ce qui concerne le développement du jeu, Lenny avance bien sur Unity avec l'intégration des nouveaux assets 3D et la mise en place des mécaniques de jeu comme les 4 voies que la moto pourra emprunter afin d'esquiver les obstacles et d'aller le plus loin possible. Pour optimiser les performances du jeu, chaque segment de la carte déjà parcouru par le joueur n’est pas détruit définitivement. Une fois hors du champ de vision, il est retiré puis réutilisé en étant replacé à l’avant du parcours. Cette méthode, appelée recycling ou object pooling, permet d’éviter la création et la suppression répétées d’éléments, ce qui réduit considérablement la charge mémoire et améliore la fluidité globale du jeu.",
+    "tags": ["Unity", "Blender", "Logos"],
+    "auteur": "Lenny, Ewen et Loann"
+  },
+  {
+    "id": 8,
+    "date": "2025-11-14",
+    "titre": "C'est la fête !",
+    "images": [
+      "/images/actualite/fete.png"
+    ],
+    "contenu": "Afin de féter l'avancement du projet, l'équipe s'est réunie pour une soirée conviviale. Malgré l'absence de notre game designer, Ewen, ce moment de détente a permis de renforcer la cohésion entre les membres de l'équipe et de célébrer les progrès réalisés jusqu'à présent. Nous sommes motivés à continuer sur cette lancée pour mener à bien notre projet Last Ride.",
+    "tags": ["Avancement", "Fête", "Réunion"],
+    "auteur": "Lenny et Loann"
   }
 ]

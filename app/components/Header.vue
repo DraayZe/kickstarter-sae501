@@ -4,30 +4,31 @@ const route = useRoute();
 
 <template>
   <header>
-    <nav class="container mx-auto px-6 py-4">
+    <nav class="mx-4 sm:mx-8 lg:mx-35 py-4">
       <div class="flex items-center justify-between">
-        <NuxtLink to="/" class="text-4xl font-display2 text-foreground">
-          Pixen
+        <NuxtLink to="/" class="text-2xl font-display2 text-foreground flex items-center">
+          <img src="/images/logo_studio_pixel.png" alt="Pixel Studio Logo" class="w-6 sm:w-10 h-full mr-3" />
+          Pixel Studio
         </NuxtLink>
 
         <div class="hidden md:flex items-center space-x-8">
           <NuxtLink
               to="/actualite"
-              class="font-display2"
+              class="font-display2 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               :class="route.path === '/actualite' ? 'text-primary' : 'text-foreground'"
           >
             Actualités
           </NuxtLink>
           <NuxtLink
               to="/planning"
-              class="font-display2"
+              class="font-display2 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               :class="route.path === '/planning' ? 'text-primary' : 'text-foreground'"
           >
             Planning
           </NuxtLink>
           <NuxtLink
               to="/equipe"
-              class="font-display2"
+              class="font-display2 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               :class="route.path === '/equipe' ? 'text-primary' : 'text-foreground'"
           >
             Équipe
@@ -44,7 +45,6 @@ const route = useRoute();
         </button>
       </div>
 
-      <!-- Mobile Menu Sidebar -->
       <div
         v-if="mobileMenuOpen"
         class="md:hidden fixed inset-y-0 right-0 w-1/2 bg-card border-l border-border z-50 shadow-2xl"

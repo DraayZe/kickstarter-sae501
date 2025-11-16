@@ -17,10 +17,10 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Lenny Fernet",
-    role: "Développeur web et jeux",
+    role: "Web and game developer",
     photo: "/images/team/lenny3.jpg",
     bio: "Passionné par le développement web et la création de jeux vidéo. Expert en Vue.js, Nuxt et Unity.",
-    skills: ["Vue.js", "Nuxt", "Unity", "TypeScript", "Game Dev"],
+    skills: ["Développeur web", "Développeur jeux vidéos","Vue.js", "Nuxt", "Unity", ],
     social: {
       linkedin: "https://www.linkedin.com/in/lenny-fernet-270b012b1/",
       github: "https://github.com/DraayZe",
@@ -31,7 +31,7 @@ const teamMembers: TeamMember[] = [
     role: "Game designer",
     photo: "/images/team/ewen.jpg",
     bio: "Game designer créatif spécialisé dans la conception de gameplay et l'expérience utilisateur dans les jeux.",
-    skills: ["Game Design", "3D Modeling", "Blender", "Concept Art", "Graphic Design"],
+    skills: ["Concepteur de jeux vidéos", "Modélisation 3D", "Concepteur de logo", "Conception graphique", "Blender",   ],
     social: {
       linkedin: "https://www.linkedin.com/in/ewendavanzo/",
       github: "https://github.com/ewenlogiciel"
@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
     role: "Game designer",
     photo: "/images/team/loann.jpg",
     bio: "Game designer passionné par la création d'univers immersifs et de mécaniques de jeu innovantes.",
-    skills: ["Game Design", "3D Modeling", "Blender", "Concept Art"],
+    skills: ["Concepteur de jeux vidéos", "Modélisation 3D", "Conception graphique", "Blender",],
     social: {
       linkedin: "https://www.linkedin.com/in/loann-germ%C3%A9-b603a52b6/",
       github: "https://github.com/Loanngerme"

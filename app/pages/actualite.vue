@@ -88,7 +88,7 @@ onMounted(async () => {
             Toutes les actualités du projet
           </h2>
           <p class="text-gray-400 text-sm sm:text-base max-w-3xl">
-            Suivez l'évolution du projet Last Ride, du début jusqu'à aujourd'hui.
+            Suivez l'évolution de Last Ride, de la genèse du projet jusqu'à la fin.
           </p>
         </div>
 

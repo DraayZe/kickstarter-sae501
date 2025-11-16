@@ -26,9 +26,9 @@ interface Actualite {
 }
 
 const images = [
-  { src: '/images/image1.png', alt: 'Description image 5' },
-  { src: '/images/image2.png', alt: 'Description image 2' },
-  { src: '/images/image3.png', alt: 'Description image 4' }
+  { src: '/images/image5.jpg', alt: 'Description image 5' },
+  { src: '/images/image4.jpg', alt: 'Description image 4' },
+  { src: '/images/image6.jpg', alt: 'Description image 6' }
 ]
 
 const defaultValue = "item-1"
@@ -133,16 +133,11 @@ const steps = [
 
 <template>
   <div class="min-h-screen">
-    <div class="container mx-auto px-4 sm:px-6 py-4 flex items-start">
-      <div>
-        <img src="" alt="Last Ride Logo" class="w-32 sm:w-48 mb-4" />
-      </div>
-      <div class="flex flex-col ml-4 sm:ml-8">
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display text-white">Last Ride</h1>
+    <div class="container mx-auto px-4 sm:px-6 py-4 flex flex-col items-center">
+        <img src="/images/logo_last_ride.png" alt="Last Ride Logo" class="w-32 sm:w-52 h-full" />
         <p class="mt-4 text-gray-400 text-sm sm:text-base max-w-3xl">
-          Découvrez les dernières actualités de Last Ride, le planning et rencontrez notre équipe passionnée.
+          Découvrez les dernières actualités de Last Ride, le planning et rencontrez notre équipe de passionnée.
         </p>
-      </div>
     </div>
 
     <div class="flex flex-col lg:flex-row gap-8 mx-4 sm:mx-8 lg:mx-35 py-12 pb-24 lg:pb-12">
