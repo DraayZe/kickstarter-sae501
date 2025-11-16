@@ -43,7 +43,7 @@ const accordionItems = [
 const teamMembers = [
   {
     name: "Lenny Fernet",
-    role: "Développeur web et jeux",
+    role: "Web and game developer",
     photo: "/images/team/lenny4.jpg"
   },
   {
