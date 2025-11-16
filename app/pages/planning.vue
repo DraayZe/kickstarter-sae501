@@ -193,6 +193,7 @@ const currentStep = phases.find(p => p.status === 'in-progress')?.step || 3
         </div>
       </div>
     </div>
+    <ScrollToTop />
   </div>
 </template>
 

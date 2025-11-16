@@ -34,7 +34,7 @@ const images = [
 const defaultValue = "item-1"
 
 const accordionItems = [
-  { value: "item-1", title: "Description du jeu", content: "Last Ride vous plonge dans une course effrénée à moto au cœur d'une métropole post-apocalyptique. Fuyez cette ville fantôme de nuit en esquivant les dangers et en récupérant de l'électricité vitale : sans phares, l'obscurité vous engloutira." },
+  { value: "item-1", title: "Description du jeu", content: "Last Ride vous plonge dans une course nocturne intense au cœur d’une métropole illuminée par les néons. À bord de votre moto filant sur une route à quatre voies, esquivez les obstacles et récupérez l’électricité nécessaire pour maintenir vos phares allumés. Chaque danger testent vos réflexes : perdez de la lumière, et l’obscurité vous enveloppe, transformant la ville en un véritable labyrinthe de défis." },
   { value: "item-2", title: "Présentation de l'équipe" },
   { value: "item-3", title: "Planning", content: "Yes! You can use the transition prop to configure the animation." },
   { value: "item-4", title: "Dernière actualités", content: "En cours..." },
@@ -44,7 +44,7 @@ const teamMembers = [
   {
     name: "Lenny Fernet",
     role: "Développeur web et jeux",
-    photo: "/images/team/lenny3.jpg"
+    photo: "/images/team/lenny4.png"
   },
   {
     name: "Ewen D'avanzo",
@@ -149,7 +149,7 @@ const steps = [
                 <div class="p-1">
                   <Card>
                     <CardContent class="flex items-center justify-center p-0 overflow-hidden rounded-lg aspect-video ">
-                      <img :src="image.src" :alt="image.alt" class="w-full h-full object-cover hover:scale-105 transition" />
+                      <img :src="image.src" :alt="image.alt"  class="w-full h-full object-cover hover:scale-102 transition-transform duration-300 ease-in-out"  />
                     </CardContent>
                   </Card>
                 </div>
@@ -225,7 +225,7 @@ const steps = [
                   Chargement des actualités...
                 </div>
                 <div
-                  v-for="actualite in dernieresActualites"
+                  v-for="(actualite, index) in dernieresActualites"
                   :key="actualite.id"
                   class="flex gap-4 bg-card rounded-lg overflow-hidden border border-border hover:border-primary/50 transition-colors p-3"
                 >
@@ -237,9 +237,14 @@ const steps = [
                     />
                   </div>
                   <NuxtLink to="/actualite" class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 text-primary text-xs mb-1">
-                      <Calendar class="w-3 h-3" />
-                      <span>{{ formatDate(actualite.date) }}</span>
+                    <div class="flex items-center gap-2 text-primary text-xs mb-1 flex-wrap">
+                      <div class="flex items-center gap-2">
+                        <Calendar class="w-3 h-3" />
+                        <span>{{ formatDate(actualite.date) }}</span>
+                      </div>
+                      <span v-if="index === 0" class="inline-flex items-center gap-1 px-2 py-0.5 bg-primary text-white text-xs font-bold rounded-full">
+                        Nouveauté
+                      </span>
                     </div>
                     <h3 class="text-white font-semibold text-base mb-1 truncate">
                       {{ actualite.titre }}
@@ -376,5 +381,6 @@ const steps = [
         </SheetContent>
       </Sheet>
     </div>
+    <ScrollToTop />
   </div>
 </template>

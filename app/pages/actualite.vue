@@ -94,7 +94,7 @@ onMounted(async () => {
 
         <div class="space-y-12 lg:space-y-16">
           <article
-              v-for="actualite in actualites"
+              v-for="(actualite, index) in actualites"
               :key="actualite.id"
               class="group"
           >
@@ -114,15 +114,15 @@ onMounted(async () => {
                     <template v-if="actualite.images.length > 1">
                       <button
                           @click="previousImage(actualite.id, actualite.images.length)"
-                          class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary text-gray-800 p-1 rounded-full transition-all duration-300 shadow-lg lg:opacity-0 lg:group-hover/slider:opacity-100 z-10"
+                          class="hover:cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-primary border border-gray-100/20 p-1 rounded-full shadow-lg lg:opacity-0 lg:group-hover/slider:opacity-100 z-10"
                       >
-                        <ChevronLeft class="w-5 h-5" />
+                        <ChevronLeft class="w-5 h-5 text-white hover:text-black" />
                       </button>
                       <button
                           @click="nextImage(actualite.id, actualite.images.length)"
-                          class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary text-gray-800 p-1 rounded-full transition-all duration-300 shadow-lg lg:opacity-0 lg:group-hover/slider:opacity-100 z-10"
+                          class="hover:cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-primary border border-gray-100/20 p-1 p-1 rounded-full transition-all duration-300 shadow-lg lg:opacity-0 lg:group-hover/slider:opacity-100 z-10"
                       >
-                        <ChevronRight class="w-5 h-5" />
+                        <ChevronRight class="w-5 h-5 text-white hover:text-black" />
                       </button>
 
                       <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -132,8 +132,8 @@ onMounted(async () => {
                             @click="goToImage(actualite.id, index)"
                             class="transition-all duration-300 rounded-full"
                             :class="getCurrentImageIndex(actualite.id) === index
-                            ? 'bg-white w-8 h-2.5'
-                            : 'bg-white/40 hover:bg-white/70 w-2.5 h-2.5'"
+                            ? 'bg-primary w-8 h-2.5'
+                            : 'bg-white/50 hover:bg-white/70 w-2.5 h-2.5'"
                         />
                       </div>
 
@@ -167,6 +167,12 @@ onMounted(async () => {
                   <div v-if="actualite.auteur" class="flex items-center gap-2 text-gray-400">
                     <User class="w-4 h-4" />
                     <span>{{ actualite.auteur }}</span>
+                  </div>
+
+                  <div v-if="index === 0" class="flex items-center">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 bg-primary text-white text-xs font-bold rounded-full shadow-lg">
+                      Nouveauté
+                    </span>
                   </div>
 
                   <div v-if="actualite.tags && actualite.tags.length > 0" class="flex flex-wrap gap-2 ml-auto">
@@ -225,6 +231,7 @@ onMounted(async () => {
 <!--        </div>-->
       </div>
     </div>
+    <ScrollToTop />
   </div>
 </template>
 
