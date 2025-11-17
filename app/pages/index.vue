@@ -73,8 +73,8 @@ const formatDate = (dateString: string) => {
 
 watchEffect((cleanupFn) => {
   const timer = setTimeout(() => {
-    progress.value = 10
-    advancementProgress.value = 14
+    progress.value = 27
+    advancementProgress.value = 33
   }, 500)
   cleanupFn(() => clearTimeout(timer))
 })
@@ -97,36 +97,36 @@ const steps = [
     step: 1,
     title: "Conception (type de jeu, storystelling, moodboard)",
     description:
-        "Octobre",
+        "Octobre 2025",
   },
   {
     step: 2,
     title: "Prototypage (fonctionalités de base)",
-    description: "Novembre",
+    description: "Novembre 2025",
   },
   {
     step: 3,
     title: "Développement (gestion des parties, intégration)",
     description:
-        "Novembre - Décembre",
+        "Novembre - Décembre 2025",
   },
   {
     step: 4,
     title: "Tests et ajustements (identification et correction des bugs)",
     description:
-        "///",
+        "Décembre 2025 - Janvier 2026",
   },
   {
     step: 5,
     title: "Intégration complète (adaption du jeu à la borne)",
     description:
-        "///",
+        "Janvier 2026",
   },
   {
     step: 6,
     title: "Validation et déploiement (derniers ajustements)",
     description:
-        "///",
+        "Janvier 2026",
   },
 ]
 </script>
@@ -136,7 +136,7 @@ const steps = [
     <div class="container mx-auto px-4 sm:px-6 py-4 flex flex-col items-center">
         <img src="/images/logo_last_ride.png" alt="Last Ride Logo" class="w-32 sm:w-52 h-full" />
         <p class="mt-4 text-gray-400 text-sm sm:text-base max-w-3xl">
-          Découvrez les dernières actualités de Last Ride, le planning et rencontrez notre équipe de passionnée.
+          Découvrez les dernières actualités de Last Ride, le planning et rencontrez notre équipe de passionnés.
         </p>
     </div>
 
@@ -296,12 +296,12 @@ const steps = [
             <div class="pt-2 border-t border-white/10">
               <h4 class="text-white font-semibold mb-3 text-sm">Suivez-nous</h4>
               <div class="flex gap-3">
-                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                <a href="https://www.instagram.com/mathiaspacko/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
+                <a href="https://www.instagram.com/mathiaspacko/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
                   <Facebook class="w-5 h-5" />
                 </a>
                 <a href="https://www.instagram.com/mathiaspacko/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primary transition-colors flex items-center justify-center text-white">
@@ -310,8 +310,15 @@ const steps = [
               </div>
             </div>
 
-            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-4 hover:cursor-pointer">
-              Soutenir le projet
+            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-4">
+              <a href="https://www.paypal.com/paypalme/drayze777" target="_blank" rel="noopener noreferrer">
+                Soutenir le projet
+              </a>
+            </Button>
+            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" disabled>
+              <a href="">
+                Télécharger le jeu
+              </a>
             </Button>
           </div>
         </div>
@@ -374,7 +381,14 @@ const steps = [
               </div>
 
               <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-4">
-                Soutenir le projet
+                <a href="https://www.paypal.com/paypalme/drayze777" target="_blank" rel="noopener noreferrer">
+                   Soutenir le projet
+                </a>
+              </Button>
+              <Button class="w-full bg-primary/40 hover:bg-primary/90 text-primary-foreground font-semibold mt-4" disabled>
+                <a href="">
+                 Télécharger le jeu
+                </a>
               </Button>
             </div>
           </div>
