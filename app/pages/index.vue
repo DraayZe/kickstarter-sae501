@@ -310,7 +310,7 @@ const steps = [
               </div>
             </div>
 
-            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-4">
+            <Button class="w-full bg-primary hover:bg-primary/90 hover:cursor-pointer text-primary-foreground font-semibold mt-4">
               <a href="https://www.paypal.com/paypalme/drayze777" target="_blank" rel="noopener noreferrer">
                 Soutenir le projet
               </a>
@@ -380,7 +380,7 @@ const steps = [
                 </div>
               </div>
 
-              <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold mt-4">
+              <Button class="w-full bg-primary hover:bg-primary/90 hover:cursor-pointer text-primary-foreground font-semibold mt-4">
                 <a href="https://www.paypal.com/paypalme/drayze777" target="_blank" rel="noopener noreferrer">
                    Soutenir le projet
                 </a>
