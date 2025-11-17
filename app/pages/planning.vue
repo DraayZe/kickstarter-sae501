@@ -2,6 +2,7 @@
 import { Check, Circle, Dot, Sparkles } from 'lucide-vue-next'
 import { Stepper, StepperDescription, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/ui/stepper"
 import { Button } from "@/components/ui/button"
+import Progress from "@/components/ui/progress/Progress.vue"
 
 interface PlanningPhase {
   id: number
@@ -19,8 +20,8 @@ const phases: PlanningPhase[] = [
     id: 1,
     step: 1,
     title: "Conception (type de jeu, storystelling, moodboard)",
-    description: "Octobre 2024",
-    period: "Octobre 2024",
+    description: "Octobre 2025",
+    period: "Octobre 2025",
     status: "completed",
     tasks: [
       "Définition du type de jeu et des mécaniques principales",
@@ -33,8 +34,8 @@ const phases: PlanningPhase[] = [
     id: 2,
     step: 2,
     title: "Prototypage (fonctionalités de base)",
-    description: "Novembre 2024",
-    period: "Novembre 2024",
+    description: "Novembre 2025",
+    period: "Novembre 2025",
     status: "completed",
     tasks: [
       "Développement du système de déplacement",
@@ -47,8 +48,8 @@ const phases: PlanningPhase[] = [
     id: 3,
     step: 3,
     title: "Développement (gestion des parties, intégration)",
-    description: "Novembre - Décembre 2024",
-    period: "Novembre - Décembre 2024",
+    description: "Novembre - Décembre 2025",
+    period: "Novembre - Décembre 2025",
     status: "in-progress",
     tasks: [
       "Gestion complète des parties et scoring",
@@ -61,8 +62,8 @@ const phases: PlanningPhase[] = [
     id: 4,
     step: 4,
     title: "Tests et ajustements (identification et correction des bugs)",
-    description: "Décembre 2024 - Janvier 2025",
-    period: "Décembre 2024 - Janvier 2025",
+    description: "Décembre 2025 - Janvier 2026",
+    period: "Décembre 2025 - Janvier 2026",
     status: "upcoming",
     tasks: [
       "Tests de gameplay et équilibrage",
@@ -75,8 +76,8 @@ const phases: PlanningPhase[] = [
     id: 5,
     step: 5,
     title: "Intégration complète (adaption du jeu à la borne)",
-    description: "Janvier 2025",
-    period: "Janvier 2025",
+    description: "Janvier 2026",
+    period: "Janvier 2026",
     status: "upcoming",
     tasks: [
       "Adaptation des contrôles pour la borne",
@@ -89,8 +90,8 @@ const phases: PlanningPhase[] = [
     id: 6,
     step: 6,
     title: "Validation et déploiement (derniers ajustements)",
-    description: "Janvier 2025",
-    period: "Janvier 2025",
+    description: "Janvier 2026",
+    period: "Janvier 2026",
     status: "upcoming",
     tasks: [
       "Validation finale de tous les systèmes",
@@ -102,6 +103,12 @@ const phases: PlanningPhase[] = [
 ]
 
 const currentStep = phases.find(p => p.status === 'in-progress')?.step || 3
+
+const totalPhases = phases.length
+const completedPhases = phases.filter(p => p.status === 'completed').length
+const inProgressPhases = phases.filter(p => p.status === 'in-progress').length
+const upcomingPhases = phases.filter(p => p.status === 'upcoming').length
+const progressPercentage = Math.round((completedPhases / totalPhases) * 100)
 </script>
 
 <template>
@@ -115,6 +122,56 @@ const currentStep = phases.find(p => p.status === 'in-progress')?.step || 3
           <p class="text-gray-400 text-sm sm:text-base max-w-3xl">
             Suivez l'évolution du développement de Last Ride, de la conception jusqu'au déploiement final.
           </p>
+        </div>
+
+        <div class="bg-card rounded-xl sm:rounded-2xl border border-border p-4 sm:p-6 lg:p-8 mb-6">
+          <div class="space-y-6">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg sm:text-xl font-semibold text-white">Progression globale</h3>
+                <span class="text-2xl sm:text-3xl font-bold text-primary">{{ progressPercentage }}%</span>
+              </div>
+              <Progress :model-value="progressPercentage" class="h-3 sm:h-4" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-400">Phases complétées</span>
+                  <Check class="w-4 h-4 text-green-500" />
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-2xl font-bold text-white">{{ completedPhases }}</span>
+                  <span class="text-sm text-gray-400">/ {{ totalPhases }}</span>
+                </div>
+                <Progress :model-value="(completedPhases / totalPhases) * 100" class="h-2 mt-3" />
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-400">Phases en cours</span>
+                  <Circle class="w-4 h-4 text-primary" />
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-2xl font-bold text-white">{{ inProgressPhases }}</span>
+                  <span class="text-sm text-gray-400">/ {{ totalPhases }}</span>
+                </div>
+                <Progress :model-value="(inProgressPhases / totalPhases) * 100" class="h-2 mt-3" />
+              </div>
+
+              <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-400">Phases à venir</span>
+                  <Dot class="w-4 h-4 text-gray-500" />
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-2xl font-bold text-white">{{ upcomingPhases }}</span>
+                  <span class="text-sm text-gray-400">/ {{ totalPhases }}</span>
+                </div>
+                <Progress :model-value="(upcomingPhases / totalPhases) * 100" class="h-2 mt-3" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="bg-card rounded-xl sm:rounded-2xl border border-border p-4 sm:p-6 lg:p-12">
