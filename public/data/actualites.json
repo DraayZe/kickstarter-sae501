@@ -86,13 +86,15 @@
   },
   {
     "id": 8,
-    "date": "2025-11-14",
-    "titre": "C'est la fête !",
+    "date": "2025-11-17",
+    "titre": "Mise en place de workflows automatisés avec GitHub Actions",
     "images": [
-      "/images/actualite/fete.png"
+      "/images/actualite/workflow1.png",
+      "images/actualite/workflowci.png",
+        "/images/actualite/workflow2.png"
     ],
-    "contenu": "Afin de féter l'avancement du projet, l'équipe s'est réunie pour une soirée conviviale. Malgré l'absence de notre game designer, Ewen qui a préféré rejoindre sa copine que d'accompagner ses collègues, a permis de renforcer la cohésion entre les membres de l'équipe et de célébrer les progrès réalisés jusqu'à présent. Nous sommes motivés à continuer sur cette lancée pour mener à bien notre projet Last Ride.",
-    "tags": ["Avancement", "Fête", "Réunion"],
-    "auteur": "Lenny et Loann"
+    "contenu": "Afin d'optimiser notre processus de développement, Lenny mis en place deux workflows automatisés utilisant GitHub Actions. Un premier permettant de vérifier le code et d'assurer que le projet peut être construit correctement et un deuxième qui permet de mettre à jour notre kickstarter plus rapidement et efficacement. Désormais, à chaque push et merge vers la branch main (la branche principale), le fichier workfow.yml se déclenche automatiquement pour déployer les dernières modifications sur notre page Kickstarter. Cela nous fait gagner un temps précieux et nous permet de nous concentrer davantage sur le développement du jeu lui-même.",
+    "tags": ["DevOps", "GitHub Actions", "Workflows"],
+    "auteur": "Lenny"
   }
 ]
