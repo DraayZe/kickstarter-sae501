@@ -73,8 +73,8 @@ const formatDate = (dateString: string) => {
 
 watchEffect((cleanupFn) => {
   const timer = setTimeout(() => {
-    progress.value = 27
-    advancementProgress.value = 33
+    progress.value = 47
+    advancementProgress.value = 52
   }, 500)
   cleanupFn(() => clearTimeout(timer))
 })
