@@ -96,5 +96,17 @@
     "contenu": "Afin d'optimiser notre processus de développement, Lenny mis en place deux workflows automatisés utilisant GitHub Actions. Un premier permettant de vérifier le code et d'assurer que le projet peut être construit correctement et un deuxième qui permet de mettre à jour notre kickstarter plus rapidement et efficacement. Désormais, à chaque push et merge vers la branch main (la branche principale), le fichier workfow.yml se déclenche automatiquement pour déployer les dernières modifications sur notre page Kickstarter. Cela nous fait gagner un temps précieux et nous permet de nous concentrer davantage sur le développement du jeu lui-même.",
     "tags": ["DevOps", "GitHub Actions", "Workflows"],
     "auteur": "Lenny"
+  },
+  {
+    "id": 9,
+    "date": "2025-11-21",
+    "titre": "Nouveaux assets 3D et amélioration des mécaniques de jeu",
+    "images": [
+      "/images/actualite/21-11_v1.png",
+      "images/actualite/21-11_v2.png"
+    ],
+    "contenu": "De nouveaux assets et mécaniques ont été implémentés récemment ! Avec la création de la route principale par Ewen et Loann, Lenny a  pu travailler sur le mouvement de la moto. Elle peut se déplacer sur 4 voies différentes, offrant ainsi plus de dynamisme au gameplay. De plus, des obstacles variés seront ajoutés pour rendre le jeu plus challengeant. Parmi eux, on retrouve des voitures abandonnées, des débris et des panneaux de signalisation. Ces éléments obligent les joueurs à réagir rapidement et à choisir la meilleure voie pour éviter les collisions. L'intégration de ces nouvelles mécaniques promet une expérience de jeu plus immersive et captivante.",
+    "tags": ["DevOps", "GitHub Actions", "Workflows"],
+    "auteur": "Lenny, Ewen et Loann"
   }
 ]
