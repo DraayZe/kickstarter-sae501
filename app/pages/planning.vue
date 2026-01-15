@@ -50,7 +50,7 @@ const phases: PlanningPhase[] = [
     title: "Développement (gestion des parties, intégration)",
     description: "Novembre - Décembre 2025",
     period: "Novembre - Décembre 2025",
-    status: "in-progress",
+    status: "completed",
     tasks: [
       "Gestion complète des parties et scoring",
       "Intégration de tous les assets graphiques",
@@ -64,7 +64,7 @@ const phases: PlanningPhase[] = [
     title: "Tests et ajustements (identification et correction des bugs)",
     description: "Décembre 2025 - Janvier 2026",
     period: "Décembre 2025 - Janvier 2026",
-    status: "upcoming",
+    status: "in-progress",
     tasks: [
       "Tests de gameplay et équilibrage",
       "Correction des bugs identifiés",
