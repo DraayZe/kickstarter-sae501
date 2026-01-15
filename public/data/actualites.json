@@ -108,5 +108,44 @@
     "contenu": "De nouveaux assets et mécaniques ont été implémentés récemment ! Avec la création de la route principale par Ewen et Loann, Lenny a  pu travailler sur le mouvement de la moto. Elle peut se déplacer sur 4 voies différentes, offrant ainsi plus de dynamisme au gameplay. De plus, des obstacles variés seront ajoutés pour rendre le jeu plus challengeant. Parmi eux, on retrouve des voitures abandonnées, des débris et des panneaux de signalisation. Ces éléments obligent les joueurs à réagir rapidement et à choisir la meilleure voie pour éviter les collisions. L'intégration de ces nouvelles mécaniques promet une expérience de jeu plus immersive et captivante.",
     "tags": ["DevOps", "GitHub Actions", "Workflows"],
     "auteur": "Lenny, Ewen et Loann"
+  },
+  {
+    "id": 10,
+    "date": "2025-12-15",
+    "titre": "Les premiers problèmes",
+    "images": [
+      "/images/actualite/batches.png",
+      "images/actualite/polygone.png"
+    ],
+    "contenu": "Les premiers problèmes ont fait surface lors des derniers tests de jeu. Lorsque Lenny a ajouté les assets 3D des game designers, il a constaté des baisses de performances quand plusieurs obstacles et éléments 3D étaient affichés simultanément. Cela a entraîné des ralentissements et une expérience de jeu moins fluide.\n\nPour résoudre ces problèmes, nous avons optimisé les modèles 3D en réduisant le nombre de polygones et en fusionnant les différentes couleurs des objets pour n'utiliser qu'un seul matériau partagé. Cette étape était cruciale pour réduire le nombre de batches dans Unity. En informatique, un batch est un regroupement de commandes envoyées par le processeur (CPU) à la carte graphique (GPU) : au lieu d'envoyer des centaines de petits ordres individuels, ce qui sature la communication, nous avons permis à Unity de traiter les objets par \"paquets\".",
+    "tags": ["Problèmes", "Performances", "Unity"],
+    "auteur": "Lenny, Ewen et Loann"
+  },
+  {
+    "id": 11,
+    "date": "2026-01-07",
+    "titre": "Optimisation des assets 3D et avancement du gameplay",
+    "images": [
+      "/images/actualite/voiture-obstacle.png",
+      "images/actualite/energie.png",
+      "/images/actualite/jeu.png"
+    ],
+    "contenu": "Une fois ces problèmes techniques résolus, les game designers, Ewen et Loann, ont dû optimiser l'ensemble des assets déjà créés. Ils ont également été contraints d'écarter ou de supprimer certains éléments trop volumineux. En effet, le jeu étant destiné à une borne d'arcade, nous devons limiter la gourmandise technique du projet pour garantir une stabilité parfaite.\n\nAprès cette phase de nettoyage, Lenny a pu intégrer les nouveaux modèles dans Unity et poursuivre le développement du gameplay. Il a notamment ajouté de nouveaux obstacles ainsi qu'une mécanique de gestion de la lumière : au fil de la partie, les phares de la moto faiblissent, rendant la visibilité plus difficile pour le joueur. Pour contrer cela, un système de collectibles a été mis en place : le joueur peut ramasser des batteries pour recharger ses phares. Enfin, pour augmenter la difficulté, la vitesse du jeu s'accélère progressivement avec le temps.",
+    "tags": ["3D", "Développement", "Améliorations"],
+    "auteur": "Lenny, Ewen et Loann"
+  },
+  {
+    "id": 12,
+    "date": "2026-01-12",
+    "titre": "Différentes scènes et leaderboards",
+    "images": [
+      "/images/actualite/MainMenu.png",
+      "images/actualite/GameOver.png",
+      "/images/actualite/Leaderboard.png",
+      "/images/actualite/Enregistrement.png"
+    ],
+    "contenu": "Lenny a travaillé sur le développement des différentes interfaces du jeu, notamment le menu principal, l'écran de Game Over ainsi que le système de Leaderboard. Ce dernier inclut l'affichage des scores et le formulaire d'enregistrement des joueurs. Pour assurer la persistance des données, Lenny a connecté le jeu à un backend via une API, permettant de sauvegarder et de consulter les meilleurs scores en temps réel.\n\nLa prochaine étape consistera à mettre en place un site web dédié. Ce portail permettra non seulement de suivre le classement mondial, mais offrira également la possibilité de modifier à distance les paramètres du jeu (vitesse, niveau des phares, etc.).",
+    "tags": ["UI", "Développement", "API"],
+    "auteur": "Lenny"
   }
 ]

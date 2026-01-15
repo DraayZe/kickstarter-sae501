@@ -73,8 +73,8 @@ const formatDate = (dateString: string) => {
 
 watchEffect((cleanupFn) => {
   const timer = setTimeout(() => {
-    progress.value = 47
-    advancementProgress.value = 52
+    progress.value = 80
+    advancementProgress.value = 85
   }, 500)
   cleanupFn(() => clearTimeout(timer))
 })
@@ -134,7 +134,7 @@ const steps = [
 <template>
   <div class="min-h-screen">
     <div class="container mx-auto px-4 sm:px-6 py-4 flex flex-col items-center">
-        <img src="/images/logo_last_ride.png" alt="Last Ride Logo" class="w-32 sm:w-52 h-full" />
+        <img src="/images/logo_last_ride_bleu.png" alt="Last Ride Logo" class="w-32 sm:w-52 h-full" />
         <p class="mt-4 text-gray-400 text-sm sm:text-base max-w-3xl">
           Découvrez les dernières actualités de Last Ride, le planning et rencontrez notre équipe de passionnés.
         </p>
@@ -174,7 +174,7 @@ const steps = [
                 </div>
               </div>
               <div v-else-if="item.value === 'item-3'">
-                <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10 p-4 sm:p-10" :default-value="2">
+                <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10 p-4 sm:p-10" :default-value="4">
                   <StepperItem
                       v-for="step in steps"
                       :key="step.step"
@@ -271,7 +271,7 @@ const steps = [
               <span class="text-white font-semibold text-lg">{{ progress }}%</span>
             </div>
             <Progress v-model="progress" class="w-full mb-3" />
-            <p class="text-muted-foreground text-sm">Le projet se termine le 23 janvier 2026</p>
+            <p class="text-muted-foreground text-sm">Le projet se termine le 28 janvier 2026</p>
           </div>
 
           <div class="bg-card rounded-lg p-6 border border-border">
@@ -315,8 +315,8 @@ const steps = [
                 Soutenir le projet
               </a>
             </Button>
-            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" disabled>
-              <a href="">
+            <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
+              <a href="https://mmi23a16.mmi-troyes.fr/LastRide/" target="_blank" rel="noopener noreferrer">
                 Télécharger le jeu
               </a>
             </Button>
@@ -386,8 +386,8 @@ const steps = [
                 </a>
               </Button>
               <Button class="w-full bg-primary/40 hover:bg-primary/90 text-primary-foreground font-semibold mt-4" disabled>
-                <a href="">
-                 Télécharger le jeu
+                <a href="https://mmi23a16.mmi-troyes.fr/LastRide/" target="_blank" rel="noopener noreferrer">
+                  Télécharger le jeu
                 </a>
               </Button>
             </div>
