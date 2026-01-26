@@ -64,7 +64,7 @@ const phases: PlanningPhase[] = [
     title: "Tests et ajustements (identification et correction des bugs)",
     description: "Décembre 2025 - Janvier 2026",
     period: "Décembre 2025 - Janvier 2026",
-    status: "in-progress",
+    status: "completed",
     tasks: [
       "Tests de gameplay et équilibrage",
       "Correction des bugs identifiés",
@@ -78,7 +78,7 @@ const phases: PlanningPhase[] = [
     title: "Intégration complète (adaption du jeu à la borne)",
     description: "Janvier 2026",
     period: "Janvier 2026",
-    status: "upcoming",
+    status: "completed",
     tasks: [
       "Adaptation des contrôles pour la borne",
       "Optimisation de l'interface arcade",
@@ -92,7 +92,7 @@ const phases: PlanningPhase[] = [
     title: "Validation et déploiement (derniers ajustements)",
     description: "Janvier 2026",
     period: "Janvier 2026",
-    status: "upcoming",
+    status: "completed",
     tasks: [
       "Validation finale de tous les systèmes",
       "Derniers ajustements visuels et sonores",
@@ -102,7 +102,7 @@ const phases: PlanningPhase[] = [
   }
 ]
 
-const currentStep = phases.find(p => p.status === 'in-progress')?.step || 3
+const currentStep = phases.find(p => p.status === 'in-progress')?.step || 7
 
 const totalPhases = phases.length
 const completedPhases = phases.filter(p => p.status === 'completed').length
