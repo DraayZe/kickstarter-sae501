@@ -147,5 +147,22 @@
     "contenu": "Lenny a travaillé sur le développement des différentes interfaces du jeu, notamment le menu principal, l'écran de Game Over ainsi que le système de Leaderboard. Ce dernier inclut l'affichage des scores et le formulaire d'enregistrement des joueurs. Pour assurer la persistance des données, Lenny a connecté le jeu à un backend via une API, permettant de sauvegarder et de consulter les meilleurs scores en temps réel.\n\nLa prochaine étape consistera à mettre en place un site web dédié. Ce portail permettra non seulement de suivre le classement mondial, mais offrira également la possibilité de modifier à distance les paramètres du jeu (vitesse, niveau des phares, etc.).",
     "tags": ["UI", "Développement", "API"],
     "auteur": "Lenny"
+  },
+  {
+    "id": 13,
+    "date": "2026-01-26",
+    "titre": "La dernière ligne droite !",
+    "images": [
+      "/images/actualite/jeu_borne1.jpg",
+      "images/actualite/jeu_borne2.jpg",
+      "/images/actualite/barricade.png",
+      "images/actualite/moto.png",
+      "images/actualite/voiture_police.png",
+      "/images/actualite/siteWebLeaderboard.png",
+      "/images/actualite/siteWebPageDaccueil.png"
+    ],
+    "contenu": "La fin du développement du jeu approche. Les derniers assets ont été produits, notamment la moto et les derniers obstacles. Lenny a terminé le développement du site web et a réussi à connecter les données du jeu à la borne ainsi qu’au site web via une API. Une version du jeu est déja présente sur la borne d'arcade dans la bâtiment MMI. Avant la finalisation du projet, il nous reste encore quelques ajouts à réaliser, comme la mise en place de l’attract mode et l’ajout des derniers détails sur le jeu.",
+    "tags": ["Unity", "Borne d'arcade", "Site web"],
+    "auteur": "Lenny, Loann, Ewen"
   }
 ]
