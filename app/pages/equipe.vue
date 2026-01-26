@@ -18,7 +18,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Lenny Fernet",
     role: "Web and game developer",
-    photo: "/images/team/lenny4.jpg",
+    photo: "/images/team/lenny.jpg",
     bio: "Passionné par le développement web et la création de jeux vidéo. Expert en Vue.js, Nuxt et Unity.",
     skills: ["Développeur web", "Développeur jeux vidéos","Vue.js", "Nuxt", "Unity", ],
     social: {

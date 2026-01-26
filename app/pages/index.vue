@@ -26,9 +26,9 @@ interface Actualite {
 }
 
 const images = [
-  { src: '/images/image5.jpg', alt: 'Description image 5' },
-  { src: '/images/image4.jpg', alt: 'Description image 4' },
-  { src: '/images/image6.jpg', alt: 'Description image 6' }
+  { src: '/images/Jeu_immersion1.png', alt: 'Description image 1' },
+  { src: '/images/Jeu_immersion2.png', alt: 'Description image 2' },
+  { src: '/images/Jeu_immersion3.png', alt: 'Description image 3' }
 ]
 
 const defaultValue = "item-1"
@@ -44,7 +44,7 @@ const teamMembers = [
   {
     name: "Lenny Fernet",
     role: "Web and game developer",
-    photo: "/images/team/lenny4.jpg"
+    photo: "/images/team/lenny.jpg"
   },
   {
     name: "Ewen D'avanzo",
@@ -73,8 +73,8 @@ const formatDate = (dateString: string) => {
 
 watchEffect((cleanupFn) => {
   const timer = setTimeout(() => {
-    progress.value = 80
-    advancementProgress.value = 85
+    progress.value = 100
+    advancementProgress.value = 100
   }, 500)
   cleanupFn(() => clearTimeout(timer))
 })
@@ -174,7 +174,7 @@ const steps = [
                 </div>
               </div>
               <div v-else-if="item.value === 'item-3'">
-                <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10 p-4 sm:p-10" :default-value="4">
+                <Stepper orientation="vertical" class="flex w-full flex-col justify-start gap-10 p-4 sm:p-10" :default-value="7">
                   <StepperItem
                       v-for="step in steps"
                       :key="step.step"
@@ -311,13 +311,13 @@ const steps = [
             </div>
 
             <Button class="w-full bg-primary hover:bg-primary/90 hover:cursor-pointer text-primary-foreground font-semibold mt-4">
-              <a href="https://www.paypal.com/paypalme/drayze777" target="_blank" rel="noopener noreferrer">
-                Soutenir le projet
+              <a href="" target="_blank" rel="noopener noreferrer">
+                Jouer au jeu (version web)
               </a>
             </Button>
             <Button class="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
-              <a href="https://mmi23a16.mmi-troyes.fr/LastRide/" target="_blank" rel="noopener noreferrer">
-                Télécharger le jeu
+              <a href="https://lastride.lennyfernet.fr/" target="_blank" rel="noopener noreferrer">
+                Site officiel de Last Ride
               </a>
             </Button>
           </div>
@@ -381,13 +381,13 @@ const steps = [
               </div>
 
               <Button class="w-full bg-primary hover:bg-primary/90 hover:cursor-pointer text-primary-foreground font-semibold mt-4">
-                <a href="https://www.paypal.com/paypalme/drayze777" target="_blank" rel="noopener noreferrer">
-                   Soutenir le projet
+                <a href="" target="_blank" rel="noopener noreferrer">
+                  Jouer au jeu (version web)
                 </a>
               </Button>
-              <Button class="w-full bg-primary/40 hover:bg-primary/90 text-primary-foreground font-semibold mt-4" disabled>
-                <a href="https://mmi23a16.mmi-troyes.fr/LastRide/" target="_blank" rel="noopener noreferrer">
-                  Télécharger le jeu
+              <Button class="w-full bg-primary/40 hover:bg-primary/90 text-primary-foreground font-semibold mt-4">
+                <a href="https://lastride.lennyfernet.fr/" target="_blank" rel="noopener noreferrer">
+                  Site officiel de Last Ride
                 </a>
               </Button>
             </div>
